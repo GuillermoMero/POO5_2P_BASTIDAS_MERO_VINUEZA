@@ -56,14 +56,27 @@ public class InicioController implements Initializable {
     Button btnInicio;
     
     @FXML
-    TextField txtUsuario;
+    static TextField txtUsuario;
     
     @FXML
-    PasswordField txtContrasenia;
+    static PasswordField txtContrasenia;
     
     @FXML
     Label lblMensaje;
     
+    static String userIngresado;
+    static String contraIngresada;
+    static Cliente clienteIngresada;
+    
+    public static Cliente elegirCliente(){
+        Cliente c2;
+        userIngresado = txtUsuario.getText();
+        contraIngresada = txtContrasenia.getText();
+        if(userIngresado.equals(c.getUsuario()) && contraIngresada.equals(c.getContrasenia())){
+            
+        }
+        return null
+    }
     @FXML
     public void iniciarSesion(ActionEvent e){
         String userIngresado = txtUsuario.getText();

@@ -20,13 +20,14 @@ public class Cliente {
     private String apellido;
     private String usuario;
     private String contrasenia;
-    
-    public Cliente(String id, String n, String a, String u, String c){
+    private String genero;
+    public Cliente(String id, String n, String a, String u, String c, String g){
         this.cedula = id;
         this.nombre = n;
         this.apellido = a;
         this.usuario = u;
         this.contrasenia = c;
+        this.genero = g;
     }
 
     public String getCedula() {
@@ -49,6 +50,10 @@ public class Cliente {
         return contrasenia;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
@@ -68,6 +73,10 @@ public class Cliente {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
     
     public static Cliente leerClientes(){
         File f = null;
@@ -82,7 +91,7 @@ public class Cliente {
             String linea;
             while((linea=br.readLine())!=null){
                 String[] partes = linea.split(",");
-                c = new Cliente(partes[0].trim(),partes[1].trim(),partes[2].trim(),partes[3].trim(),partes[4].trim());
+                c = new Cliente(partes[0].trim(),partes[1].trim(),partes[2].trim(),partes[3].trim(),partes[4].trim(),partes[5]);
             }
         }catch(Exception e){
             e.printStackTrace();

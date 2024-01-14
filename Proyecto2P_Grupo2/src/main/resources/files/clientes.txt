@@ -1,3 +1,3 @@
-cedula,nombre,apellido,usuario,contraseña
-0952588267,Guillermo,Mero,gimero,memo302002
-0950797738,Paula,Bastidas,pmbastid,polipopi
+cedula,nombre,apellido,usuario,contraseña,genero
+0952588267,Guillermo,Mero,gimero,memo302002,M
+0950797738,Paula,Bastidas,pmbastid,polipopi,F
