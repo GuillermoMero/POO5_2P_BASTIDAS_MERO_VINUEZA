@@ -1,0 +1,2 @@
+cedula,nombre,apellido,usuario,contraseña
+0952588267,Guillermo,Mero,gimero,memo302002

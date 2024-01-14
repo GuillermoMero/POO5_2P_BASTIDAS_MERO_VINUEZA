@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.BienvenidosController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutY="30.0" prefHeight="337.0" prefWidth="355.0" spacing="40.0">
+         <children>
+            <Text fx:id="txtBienvenido" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.18994140625">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="57.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnPromo" mnemonicParsing="false" prefHeight="31.0" prefWidth="211.0" text="Promociones del mes">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnReserva" mnemonicParsing="false" prefHeight="30.0" prefWidth="213.0" text="Reserva tu vuelo">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
