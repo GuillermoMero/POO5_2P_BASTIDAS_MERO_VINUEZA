@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -12,26 +13,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.InicioController">
+<AnchorPane id="AnchorPane" fx:id="anchorImg" prefHeight="369.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.InicioController">
    <children>
-      <VBox alignment="CENTER" layoutX="224.0" layoutY="145.0" prefHeight="209.0" prefWidth="340.0" spacing="5.0">
+      <ImageView fx:id="imgView" fitHeight="369.0" fitWidth="579.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox alignment="CENTER" layoutX="317.0" layoutY="118.0" prefHeight="192.0" prefWidth="262.0" spacing="5.0">
          <children>
-            <GridPane hgap="20.0" prefHeight="59.0" prefWidth="403.0">
+            <GridPane hgap="20.0" prefHeight="59.0" prefWidth="230.0">
                <columnConstraints>
-                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="200.6666259765625" minWidth="10.0" prefWidth="168.6666259765625" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.0" minWidth="10.0" prefWidth="251.3333740234375" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="200.6666259765625" minWidth="10.0" prefWidth="64.80001220703124" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.0" minWidth="10.0" prefWidth="130.39998779296874" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="29.4" minHeight="10.0" prefHeight="27.799993896484374" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.000006103515624" minHeight="10.0" prefHeight="31.000006103515624" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label text="Usuairo:">
+                  <Label text="Usuairo:" textFill="#7b6458">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="Contraseña:" GridPane.rowIndex="1">
+                  <Label text="Contraseña:" textFill="#7b6458" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -47,7 +49,7 @@
                </VBox.margin>
             </GridPane>
             <Label fx:id="lblMensaje" />
-            <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="29.0" prefWidth="111.0" text="Iniciar sesión">
+            <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="29.0" prefWidth="111.0" style="-fx-background-color: #7B6458;" text="Iniciar sesión" textFill="#dec890">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

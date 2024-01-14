@@ -4,6 +4,7 @@
  */
 package com.mycompany.proyecto2p_grupo2;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,8 +19,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+
 import javafx.stage.Stage;
 import modelo.Cliente;
 
@@ -35,9 +38,20 @@ public class InicioController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        try(FileInputStream input = new FileInputStream("src/main/resources/images/img1.png")){
+            Image i = new Image(input,578,369,false,false);
+            imgView.setImage(i);
+        }catch(IOException e){
+            System.out.println("No se encuentra el archivo");
+        }
+        
         // TODO
-    }    
-    
+    }
+    @FXML
+    ImageView imgView;
+    @FXML
+    AnchorPane anchorImg;
     @FXML
     Button btnInicio;
     
