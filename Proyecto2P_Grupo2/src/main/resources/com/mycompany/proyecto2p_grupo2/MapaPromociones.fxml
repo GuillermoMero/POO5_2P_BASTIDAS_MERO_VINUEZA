@@ -2,15 +2,13 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="607.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.MapaPromocionesController">
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.MapaPromocionesController">
    <children>
       <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="513.0" prefWidth="613.0">
          <children>
@@ -38,13 +36,10 @@
                   <Insets left="20.0" top="20.0" />
                </VBox.margin>
             </HBox>
-            <ImageView fitHeight="392.0" fitWidth="652.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgMapa" fitHeight="392.0" fitWidth="652.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
-               <image>
-                  <Image url="@../../../../../../../../../../../OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/2do%20Semestre/POO/PROYECTO%20ENTREGABLE/PROYECTO%20ENTREGABLE/mapa.png" />
-               </image>
             </ImageView>
          </children>
       </VBox>

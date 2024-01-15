@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyecto2p_grupo2;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import javafx.util.Duration;
 import java.util.ArrayList;
@@ -14,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import modelo.Reserva;
 
 /**
@@ -29,9 +33,16 @@ public class ReservasCreadasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        try(FileInputStream input = new FileInputStream("src/main/resources/images/Avion.png")){
+            Image i = new Image(input,360,360,false,false);
+            imgAvion.setImage(i);
+        }catch(IOException e){
+            System.out.println("No se encuentra el archivo");
+        }
         cargarListaReservas();
     }
-    
+    @FXML
+    private ImageView imgAvion;
     @FXML
     private ListView<String> listReservas;
     
