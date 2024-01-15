@@ -7,6 +7,7 @@ package com.mycompany.proyecto2p_grupo2;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,6 +23,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import javafx.stage.Stage;
 import modelo.Cliente;
@@ -56,73 +59,62 @@ public class InicioController implements Initializable {
     Button btnInicio;
     
     @FXML
-    static TextField txtUsuario;
+    TextField txtUsuario;
     
     @FXML
-    static PasswordField txtContrasenia;
+    PasswordField txtContrasenia;
     
     @FXML
     Label lblMensaje;
     
-    static String userIngresado;
-    static String contraIngresada;
-    static Cliente clienteIngresada;
-    
-    public static Cliente elegirCliente(){
-        Cliente c2;
-        userIngresado = txtUsuario.getText();
-        contraIngresada = txtContrasenia.getText();
-        if(userIngresado.equals(c.getUsuario()) && contraIngresada.equals(c.getContrasenia())){
-            
-        }
-        return null
-    }
+  
     @FXML
-    public void iniciarSesion(ActionEvent e){
+    void iniciarSesion(ActionEvent e){
         String userIngresado = txtUsuario.getText();
         String contraIngresada = txtContrasenia.getText();
-        Cliente c = Cliente.leerClientes();
-        
-        if(userIngresado.equals(c.getUsuario()) && contraIngresada.equals(c.getContrasenia())){
-            /***btnInicio.setOnAction(new EventHandler<ActionEvent>(){
-                @Override
-                public void handle(ActionEvent e){
-                    Stage s = (Stage)btnInicio.getScene().getWindow();
-                    
-                    Pane rootBienvenida = new Pane();
-                    VBox v = new  VBox();
-                    Label lblBienvenida = new Label();
-                    lblBienvenida.setText("Bienvenido "+c.getNombre());
-                    Button btnPromo = new Button();
-                    btnPromo.setStyle("Bold");
-                    btnPromo.setText("Promociones del mes");
-                    Button btnReserva = new Button();
-                    btnReserva.setStyle("Bold");
-                    btnReserva.setText("Reserva tu vuelo");
-                    v.getChildren().addAll(lblBienvenida,btnPromo,btnReserva);
-                    v.setSpacing(20);
-                    rootBienvenida.getChildren().addAll(v);
-                    Scene ventanaBienvenida = new Scene(rootBienvenida, 400, 450);
-                    s.setTitle("Bienvenidos");
-                    s.setScene(ventanaBienvenida);
-                    s.show();
-                }
-            });***/
-            Stage s = (Stage)btnInicio.getScene().getWindow();
-            FXMLLoader f = new FXMLLoader(Main.class.getResource("Bienvenidos.fxml"));
-            Parent root = null;
-            try{
-                root = f.load();
-            }catch(IOException i){
-                
+        ArrayList<Cliente> clientes = Cliente.leerClientes();
+        for(int i=0; i<clientes.size();i++){
+            Cliente c = clientes.get(i);
+             if(userIngresado.equals(c.getUsuario()) && contraIngresada.equals(c.getContrasenia())){
+                Stage s = (Stage)btnInicio.getScene().getWindow();
+                cargarBienvenidos(c,s); 
+                cargarReservasCreadas(c);
+            }else{
+                lblMensaje.setText("El usuario o contraseña no existe");
             }
-            Scene ventanaBienvenida = new Scene(root);
-            s.setTitle("Bienvenidos");
-            s.setScene(ventanaBienvenida);
-            s.show();
-        }else{
-            lblMensaje.setText("El usuario o contraseña no existe");
+        } 
+    }
+    
+    public void cargarBienvenidos(Cliente c, Stage s){
+        FXMLLoader f = new FXMLLoader(Main.class.getResource("Bienvenidos.fxml"));
+        Parent root = null;
+        try{
+            root = f.load();
+        }catch(IOException e2){
+            
         }
+        BienvenidosController bc = f.getController();
+        bc.darBienvenida(c.getGenero(),c.getNombre());
+        Scene ventanaBienvenida = new Scene(root);
+        s.setTitle("Bienvenidos");
+        s.setScene(ventanaBienvenida);
+        s.show(); 
+    }
+    
+    public void cargarReservasCreadas(Cliente c){
+        Stage s = new Stage();
+        FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservasCreadas.fxml"));
+        Parent root = null;
+        try{
+            root = fl.load();
+        }catch(IOException e){
+            
+        }
+        Scene ventanaReservasC = new Scene(root);
+        s.setTitle("Reservas Creadas");
+        s.setScene(ventanaReservasC);
+        s.show();
+        
     }
 
     

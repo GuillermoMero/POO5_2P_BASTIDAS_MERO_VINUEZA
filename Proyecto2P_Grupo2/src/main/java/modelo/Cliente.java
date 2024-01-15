@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 /**
  *
@@ -78,11 +79,12 @@ public class Cliente {
         this.genero = genero;
     }
     
-    public static Cliente leerClientes(){
+    public static ArrayList<Cliente> leerClientes(){
         File f = null;
         FileReader fr = null;
         BufferedReader br = null;
-        Cliente c = null;
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        Cliente c;
         try{
             f = new File(Main.pathFiles+"clientes.txt");
             fr = new FileReader(f,StandardCharsets.UTF_8);
@@ -91,7 +93,8 @@ public class Cliente {
             String linea;
             while((linea=br.readLine())!=null){
                 String[] partes = linea.split(",");
-                c = new Cliente(partes[0].trim(),partes[1].trim(),partes[2].trim(),partes[3].trim(),partes[4].trim(),partes[5]);
+                c = new Cliente(partes[0].trim(),partes[1].trim(),partes[2].trim(),partes[3].trim(),partes[4].trim(),partes[5].trim());
+                clientes.add(c);
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -104,7 +107,7 @@ public class Cliente {
                 e2.printStackTrace();
             }
         }
-        return c;
+        return clientes;
     }
     /***
     public static void main(String [] args){

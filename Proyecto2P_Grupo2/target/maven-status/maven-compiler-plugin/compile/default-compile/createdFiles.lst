@@ -1,6 +1,10 @@
-com\mycompany\proyecto2p_grupo2\InicioController.class
 com\mycompany\proyecto2p_grupo2\Main.class
+com\mycompany\proyecto2p_grupo2\InicioController.class
 module-info.class
 modelo\Cliente.class
 com\mycompany\proyecto2p_grupo2\BienvenidosController.class
+modelo\Promocion.class
+modelo\Reserva.class
+com\mycompany\proyecto2p_grupo2\ReservasCreadasController.class
 com\mycompany\proyecto2p_grupo2\App.class
+com\mycompany\proyecto2p_grupo2\MapaPromocionesController.class

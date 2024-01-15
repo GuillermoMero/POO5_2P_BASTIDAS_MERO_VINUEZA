@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="298.0" prefWidth="255.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.ReservasCreadasController">
+   <children>
+      <VBox layoutX="34.0" layoutY="36.0" prefHeight="298.0" prefWidth="187.0" spacing="20.0">
+         <children>
+            <Label text="Reservas Creadas" textFill="#7b6458">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="211.0" prefWidth="187.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="281.0" prefWidth="165.0">
+                     <children>
+                        <ListView fx:id="listReservas" layoutX="-4.0" prefHeight="285.0" prefWidth="187.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

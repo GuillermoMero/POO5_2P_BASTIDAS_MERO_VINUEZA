@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="607.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.MapaPromocionesController">
+   <children>
+      <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="513.0" prefWidth="613.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="88.0" prefWidth="677.0">
+               <children>
+                  <Label text="Explora ofertas" textFill="#7b6458">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" prefHeight="53.0" prefWidth="657.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="418.0" text="Da clic sobre el país que interesa y aprovecha las promociones disponibles">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <ImageView fitHeight="392.0" fitWidth="652.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../../../../../../../../../OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/2do%20Semestre/POO/PROYECTO%20ENTREGABLE/PROYECTO%20ENTREGABLE/mapa.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -11,14 +11,23 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.BienvenidosController">
    <children>
       <ImageView fx:id="imgBienvenido" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-      <VBox alignment="TOP_CENTER" layoutX="-56.0" layoutY="48.0" prefHeight="337.0" prefWidth="355.0" spacing="40.0">
+      <VBox alignment="TOP_CENTER" layoutX="-24.0" layoutY="48.0" prefHeight="337.0" prefWidth="355.0" spacing="40.0">
          <children>
-            <Text fx:id="txtBienvenido" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.18994140625">
-               <font>
-                  <Font name="Franklin Gothic Demi Cond" size="57.0" />
-               </font>
-            </Text>
-            <Button fx:id="btnPromo" mnemonicParsing="false" prefHeight="31.0" prefWidth="211.0" text="Promociones del mes">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text fx:id="txtBienvenido" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.18994140625">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="57.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtNombre" fill="#7b6458" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.18994140625">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="57.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Button fx:id="btnPromo" mnemonicParsing="false" onAction="#mostrarPromociones" prefHeight="31.0" prefWidth="211.0" style="-fx-background-color: #7B6458; -fx-border-radius: 5; -fx-border-color: White; -fx-border-width: 3; -fx-background-radius: 8;" text="Promociones del mes" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -26,7 +35,7 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnReserva" mnemonicParsing="false" prefHeight="30.0" prefWidth="213.0" text="Reserva tu vuelo">
+            <Button fx:id="btnReserva" mnemonicParsing="false" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: #7B6458; -fx-background-radius: 8; -fx-border-color: White; -fx-border-width: 3; -fx-border-radius: 5;" text="Reserva tu vuelo" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
