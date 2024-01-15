@@ -35,7 +35,7 @@ public class BienvenidosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try(FileInputStream input = new FileInputStream("src/main/resources/images/imgBienvenido.png")){
-            Image i = new Image(input,578,369,false,false);
+            Image i = new Image(input,614,402,false,false);
             imgBienvenido.setImage(i);
         }catch(IOException e){
             System.out.println("No se encuentra el archivo");
