@@ -7,12 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="298.0" prefWidth="255.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.ReservasCreadasController">
+<AnchorPane id="AnchorPane" prefHeight="298.0" prefWidth="255.0" style="-fx-background-color: #7B6458;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservasCreadasController">
    <children>
       <VBox layoutX="34.0" layoutY="36.0" prefHeight="298.0" prefWidth="187.0" spacing="20.0">
          <children>
-            <Label text="Reservas Creadas" textFill="#7b6458">
+            <Label text="Reservas Creadas" textFill="#cde44b">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
