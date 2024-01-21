@@ -1,0 +1,14 @@
+Cali,Colombia
+México,México
+Nueva York,Estados Unidos
+Shanghái,China
+Canberra,Australia
+Buenos Aires,Argentina
+Ankara,Turquía
+París,Francia
+Barcelona,España
+Roma,Italia
+Lima,Perú
+Ankara,Nigeria
+El Cairo,Egipto
+agregar más datos, procure que sean destinos de paises que esten en el archivo de promociones y otros no.

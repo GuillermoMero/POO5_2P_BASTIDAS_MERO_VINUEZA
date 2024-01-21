@@ -116,6 +116,4 @@ public class InicioController implements Initializable {
         s.show();
         
     }
-
-    
 }

@@ -22,7 +22,7 @@ public class Promocion {
     private String codigo;
     private int descuento;
     
-    public Promocion(double x, double y, String p, String c, int d){
+    public Promocion(double x, double y, String c, String p, int d){
         this.x = x;
         this.y = y;
         this.pais = p;
@@ -70,7 +70,7 @@ public class Promocion {
         this.descuento = descuento;
     }
     
-    public ArrayList<Promocion> leerPromociones(){
+    public static ArrayList<Promocion> leerPromociones(){
         File f = null;
         FileReader fr = null;
         BufferedReader br = null;
@@ -84,7 +84,7 @@ public class Promocion {
             String linea;
             while((linea=br.readLine())!=null){
                 String[] partes = linea.split(",");
-                p = new Promocion(Double.parseDouble(partes[0].trim()),Double.parseDouble(partes[1].trim()),partes[2].trim(),partes[3].trim(),Integer.parseInt(partes[0].trim()));
+                p = new Promocion(Double.parseDouble(partes[0].trim()),Double.parseDouble(partes[1].trim()),partes[2].trim(),partes[3].trim(),Integer.parseInt(partes[4].trim()));
                 promociones.add(p);
             }
         }catch(Exception e){

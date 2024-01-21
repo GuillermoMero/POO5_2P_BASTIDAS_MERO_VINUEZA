@@ -17,6 +17,7 @@ import javafx.stage.Stage;
  */
 public class Main extends Application{
     public static String pathFiles = "src/main/resources/files/";
+    public static String pathImages = "src/main/resources/images/";
     private static Scene scene;
     
     @Override
