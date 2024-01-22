@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="382.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.BienvenidosController">
    <children>
-      <ImageView fx:id="imgBienvenido" fitHeight="402.0" fitWidth="614.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgBienvenido" fitHeight="416.0" fitWidth="614.0" pickOnBounds="true" preserveRatio="true" />
       <VBox alignment="TOP_CENTER" layoutX="-49.0" layoutY="48.0" prefHeight="337.0" prefWidth="355.0" spacing="40.0">
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -35,7 +35,7 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnReserva" mnemonicParsing="false" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: #7B6458; -fx-background-radius: 8; -fx-border-color: White; -fx-border-width: 3; -fx-border-radius: 5;" text="Reserva tu vuelo" textFill="WHITE">
+            <Button fx:id="btnReserva" mnemonicParsing="false" onAction="#mostrarReservaVuelo" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: #7B6458; -fx-background-radius: 8; -fx-border-color: White; -fx-border-width: 3; -fx-border-radius: 5;" text="Reserva tu vuelo" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

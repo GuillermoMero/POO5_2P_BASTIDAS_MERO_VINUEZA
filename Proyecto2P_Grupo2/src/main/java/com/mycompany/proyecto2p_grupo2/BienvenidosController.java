@@ -70,7 +70,7 @@ public class BienvenidosController implements Initializable {
     
     @FXML
     void mostrarPromociones(ActionEvent e){
-        Stage s = (Stage)btnPromo.getScene().getWindow();
+        Stage s = new Stage();
         FXMLLoader fl = new FXMLLoader(Main.class.getResource("MapaPromociones.fxml"));
         Parent rootPromo = null;
         try{
@@ -86,6 +86,17 @@ public class BienvenidosController implements Initializable {
     
     @FXML
     void mostrarReservaVuelo(ActionEvent e){
-        
+        Stage s = new Stage();
+        FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo.fxml"));
+        Parent root = null;
+        try{
+            root = fl.load();
+        }catch(IOException i){
+            
+        }
+        Scene ventanaReservaVuelo = new Scene(root);
+        s.setTitle("Reserva Vuelo");
+        s.setScene(ventanaReservaVuelo);
+        s.show();
     }
 }

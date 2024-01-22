@@ -42,10 +42,10 @@ public class Destino {
 
     @Override
     public String toString() {
-        return pais;
+        return ciudad;
     }
     
-    public ArrayList<Destino> leerDestinos(){
+    public static ArrayList<Destino> leerDestinos(){
         ArrayList<Destino> destinos = new ArrayList<>();
         File archivo = null;
         FileReader fr = null;
