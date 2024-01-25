@@ -38,6 +38,8 @@ public class Vuelo implements Comparable<Vuelo>{
         this.codigoAvion = codigoAvion;
         this.precio = precio;
     }
+    
+    
 
     public String getNumVuelo() {
         return numVuelo;
@@ -136,8 +138,9 @@ public class Vuelo implements Comparable<Vuelo>{
     @Override
     public int compareTo(Vuelo v){
         //FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo1.fxml"));
-        //ReservaVuelo1Controller rc1 = fl.getController();
         
+        //ReservaVuelo1Controller rc1 = fl.getController();
+        //String tipoOrden = ReservaVuelo1Controller.cbOrden.getValue();
         if(tipoOrden.equals("Precio")){
             if(this.precio < v.precio){
                 return -1;
@@ -153,4 +156,5 @@ public class Vuelo implements Comparable<Vuelo>{
         }
         return 0;
     }
+    
 }

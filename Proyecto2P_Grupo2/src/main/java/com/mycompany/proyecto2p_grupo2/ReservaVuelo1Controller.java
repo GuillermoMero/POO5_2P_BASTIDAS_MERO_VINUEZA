@@ -4,6 +4,7 @@
  */
 package com.mycompany.proyecto2p_grupo2;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,16 +14,21 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Point3D;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
+import javafx.stage.Stage;
 import modelo.Vuelo;
 
 /**
@@ -45,7 +51,7 @@ public class ReservaVuelo1Controller implements Initializable {
     private Label lblTitulo;
     
     @FXML
-    private ComboBox<String> cbOrden;
+    public ComboBox<String> cbOrden;
     
     @FXML
     private Label lblOrden;
@@ -53,8 +59,10 @@ public class ReservaVuelo1Controller implements Initializable {
     @FXML
     private VBox rootVuelo1;
     
-    public String origenSeleccionado;
-    public String destinoSeleccionado;
+    @FXML
+    private VBox seccionVuelos;
+    
+    //public static String ordenSeleccionado = cbOrden.getValue();
     
     public void cargarTitulo(String origen, String destino){
         String titulo = "Selecciona tu vuelo "+origen+" - "+destino;
@@ -68,24 +76,24 @@ public class ReservaVuelo1Controller implements Initializable {
     
     
     public void cargarVuelos(String origen, String destino){
-        Thread t = new Thread(new Runnable(){
-            @Override
-            public void run(){
-                ejecutarTarea(origen, destino);
-                Vuelo.tipoOrden = cbOrden.getValue();
-            }
-        });
-        t.setName("Vuelos origen - destino");
-        t.start();
-    }
-    
-    public void ejecutarTarea(String origen, String destino){
         cbOrden.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent a){
+                seccionVuelos.getChildren().clear();
+                ejecutarTarea(origen, destino);
+            }
+        });
+        
+    }
+    
+    public void ejecutarTarea(String origen, String destino){
+        Thread t = new Thread(new Runnable(){
+            @Override
+            public void run(){
                 System.out.println("Empieza hilo "+Thread.currentThread());
                 ArrayList<Vuelo> vuelos = Vuelo.leerVuelos();
-                Collections.sort(vuelos);
+                Vuelo.tipoOrden = cbOrden.getValue();
+                Collections.sort(vuelos,Collections.reverseOrder());
                 for(Vuelo v: vuelos){
                     if(origen.equals(v.getOrigen()) && destino.equals(v.getDestino())){
                         System.out.println("Prueba"+1);
@@ -102,7 +110,8 @@ public class ReservaVuelo1Controller implements Initializable {
                 System.out.println("Termina hilo "+Thread.currentThread());
             }
         });
-       
+        t.setName("Vuelos origen - destino");
+        t.start();
     }
     
     public void crearBorderPane(Vuelo v){
@@ -128,7 +137,7 @@ public class ReservaVuelo1Controller implements Initializable {
         linea.setScaleZ(1);
         linea.setRotationAxis(new Point3D(0,0,1));
         bpVuelos.setCenter(linea);
-        lblDuracion.setText(String.valueOf(v.getDuracion()));
+        lblDuracion.setText(String.valueOf("Duración: "+v.getDuracion()+" horas"));
         lblDuracion.setStyle("-fx-font-weight: bold;");
         BorderPane.setAlignment(lblDuracion, Pos.CENTER);
         bpVuelos.setTop(lblDuracion);
@@ -144,7 +153,8 @@ public class ReservaVuelo1Controller implements Initializable {
             @Override
             public void run(){
                 lblOrden.setText("");
-                rootVuelo1.getChildren().add(bpVuelos);
+                seccionVuelos.getChildren().add(bpVuelos);
+                mostrarReservaVuelo2(bpVuelos);
             }
         });
     }
@@ -153,7 +163,23 @@ public class ReservaVuelo1Controller implements Initializable {
         cbOrden.getItems().setAll("Precio", "Duración");
     }
     
-    //public String elegirOrden(){
-      //  return cbOrden.getValue();
-    //}
+    public void mostrarReservaVuelo2(BorderPane bp){
+        bp.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent m){
+                Stage s = (Stage)bp.getScene().getWindow();
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo2.fxml"));
+                Parent rootVuelo2 = null;
+                try{
+                    rootVuelo2 = fl.load();
+                }catch(IOException e){
+                    
+                }
+                Scene ventanaVuelo2 = new Scene(rootVuelo2);
+                s.setScene(ventanaVuelo2);
+                s.setTitle("Reserva Vuelo 2");
+                s.show();
+            }
+        });
+    }
 }
