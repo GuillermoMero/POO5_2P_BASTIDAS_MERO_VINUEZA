@@ -1,4 +1,7 @@
 número de vuelo,origen,destino,duracion(en horas),hora de salida,hora de llegada,codigo de avión,precio
 AV8384,Guayaquil,Barcelona,20,03:30,05:25,Airbus A319,653.06
-AV1234,Guayaquil,Barcelona,19,04:25,05:25,Landan A103,725.00
+AV1234,Guayaquil,Barcelona,15,04:25,00:40,Landan A103,725.00
 AV0007,Guayaquil,Barcelona,13,10:20,05:25,AirFast A098,747.00
+AV1234,Guayaquil,Barcelona,19,04:25,05:25,AirRelax C103,680.00
+AV5643,Barcelona,Guayaquil,15,10:20,05:25,DarlingTravel D911,466.06
+AV7777,Barcelona,Guayaquil,10,12:50,22:25,Airbus A400,740.00

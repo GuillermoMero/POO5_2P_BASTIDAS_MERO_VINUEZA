@@ -7,7 +7,6 @@ package com.mycompany.proyecto2p_grupo2;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -36,7 +35,7 @@ import modelo.Vuelo;
  *
  * @author LENOVO
  */
-public class ReservaVuelo1Controller implements Initializable {
+public class ReservaVuelo3Controller implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -48,7 +47,6 @@ public class ReservaVuelo1Controller implements Initializable {
         cargarVuelos();
         ejecutarTarea();
     }    
-    
     public static String origenSeleccionado;
     public static String destinoSeleccionado;
     
@@ -57,6 +55,9 @@ public class ReservaVuelo1Controller implements Initializable {
     
     @FXML
     public ComboBox<String> cbOrden;
+    
+    @FXML
+    private VBox rootVuelo1;
     
     @FXML
     private VBox seccionVuelos;
@@ -93,16 +94,6 @@ public class ReservaVuelo1Controller implements Initializable {
                         System.out.println("Mostrando vuelo"+(i+1));
                         crearBorderPane(v);
                     }
-                }
-                if(seccionVuelos.getChildren().isEmpty()){
-                    Label lblMensaje = new Label();
-                    lblMensaje.setText("No hay vuelos disponibles");
-                    Platform.runLater(new Runnable(){
-                        @Override
-                        public void run(){
-                            seccionVuelos.getChildren().add(lblMensaje);
-                        } 
-                    });
                 }
                 System.out.println("Termina hilo "+Thread.currentThread());
             }
@@ -177,7 +168,7 @@ public class ReservaVuelo1Controller implements Initializable {
             @Override
             public void run(){
                 seccionVuelos.getChildren().add(bpVuelos);
-                mostrarReservaVuelo2(bpVuelos, v);
+                mostrarReservaVuelo4(bpVuelos, v);
             }
         });
     }
@@ -186,21 +177,21 @@ public class ReservaVuelo1Controller implements Initializable {
         cbOrden.getItems().setAll("Precio", "Duración");
     }
     
-    public void mostrarReservaVuelo2(BorderPane bp, Vuelo v){
+    public void mostrarReservaVuelo4(BorderPane bp, Vuelo v){
         bp.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent m){
-                ReservaVuelo2Controller.precioVuelo = v.getPrecio();
+                ReservaVuelo4Controller.precioVuelo = v.getPrecio();
                 Stage s = (Stage)bp.getScene().getWindow();
-                FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo2.fxml"));
-                Parent rootVuelo2 = null;
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo4.fxml"));
+                Parent rootVuelo4 = null;
                 try{
-                    rootVuelo2 = fl.load();
+                    rootVuelo4 = fl.load();
                 }catch(IOException e){
                     
                 }
-                Scene ventanaVuelo2 = new Scene(rootVuelo2);
-                s.setScene(ventanaVuelo2);
+                Scene ventanaVuelo4 = new Scene(rootVuelo4);
+                s.setScene(ventanaVuelo4);
                 s.setTitle("Reserva Vuelo 2");
                 s.show();
             }

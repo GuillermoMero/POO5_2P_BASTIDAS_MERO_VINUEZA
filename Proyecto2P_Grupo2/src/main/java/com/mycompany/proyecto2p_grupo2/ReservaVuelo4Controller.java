@@ -30,7 +30,7 @@ import modelo.Tarifa;
  *
  * @author LENOVO
  */
-public class ReservaVuelo2Controller implements Initializable {
+public class ReservaVuelo4Controller implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -305,14 +305,14 @@ public class ReservaVuelo2Controller implements Initializable {
             public void handle(MouseEvent m){
                 Stage s = (Stage) v.getScene().getWindow();
                 FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo3.fxml"));
+                ReservaVuelo3Controller.origenSeleccionado = ReservaVuelo1Controller.destinoSeleccionado;
+                ReservaVuelo3Controller.destinoSeleccionado = ReservaVuelo1Controller.origenSeleccionado;
                 Parent rootVuelo3 = null;
                 try{
                     rootVuelo3 = fl.load();
                 }catch(IOException e){
                     
                 }
-                ReservaVuelo3Controller rc3 = fl.getController();
-                rc3.cargarTitulo();
                 Scene scene = new Scene(rootVuelo3);
                 s.setScene(scene);
                 s.setTitle("Reserva vuelo 3");

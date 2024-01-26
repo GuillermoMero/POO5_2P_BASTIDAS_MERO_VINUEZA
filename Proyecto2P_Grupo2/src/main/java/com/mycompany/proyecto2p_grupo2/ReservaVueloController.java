@@ -107,11 +107,12 @@ public class ReservaVueloController implements Initializable {
                 
             }
             ReservaVuelo1Controller rc1 = fl.getController();
-            //ReservaVuelo1Controller.origenSeleccionado = cbOrigenes.getValue();
-            String destino = String.valueOf(cbDestinos.getValue());
-            //ReservaVuelo1Controller.destinoSeleccionado = destino;
-            rc1.cargarTitulo(cbOrigenes.getValue(), destino);
-            
+            rc1.cargarTitulo();
+            ReservaVuelo1Controller.origenSeleccionado = cbOrigenes.getValue();
+            ReservaVuelo1Controller.destinoSeleccionado = String.valueOf(cbDestinos.getValue());
+            ReservaVuelo3Controller.origenSeleccionado = String.valueOf(cbDestinos.getValue());
+            ReservaVuelo3Controller.destinoSeleccionado = cbOrigenes.getValue();
+            rc1.cargarTitulo();
             Scene ventanaVuelo1 = new Scene(root);
             s.setTitle("Reserva Vuelo 1");
             s.setScene(ventanaVuelo1);
