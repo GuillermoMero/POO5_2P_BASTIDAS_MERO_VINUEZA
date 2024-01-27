@@ -6,6 +6,8 @@ package com.mycompany.proyecto2p_grupo2;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -112,6 +114,8 @@ public class ReservaVueloController implements Initializable {
             ReservaVuelo1Controller.destinoSeleccionado = String.valueOf(cbDestinos.getValue());
             ReservaVuelo3Controller.origenSeleccionado = String.valueOf(cbDestinos.getValue());
             ReservaVuelo3Controller.destinoSeleccionado = cbOrigenes.getValue();
+            ReservaVuelo5Controller.fechaIda = dpSalida.getValue();
+            ReservaVuelo5Controller.fechaRegreso = dpRegreso.getValue();
             rc1.cargarTitulo();
             Scene ventanaVuelo1 = new Scene(root);
             s.setTitle("Reserva Vuelo 1");

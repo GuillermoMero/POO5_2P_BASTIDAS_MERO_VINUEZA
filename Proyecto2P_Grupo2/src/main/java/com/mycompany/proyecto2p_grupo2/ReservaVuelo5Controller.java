@@ -5,6 +5,7 @@
 package com.mycompany.proyecto2p_grupo2;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.Month;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -38,8 +39,8 @@ public class ReservaVuelo5Controller implements Initializable {
         cargarResumen();
     }
     
-    public static String fechaIda;
-    public static String fechaRegreso;
+    public static LocalDate fechaIda;
+    public static LocalDate fechaRegreso;
     public static Vuelo vueloIda;
     public static Vuelo vueloRegreso;
     
@@ -58,9 +59,7 @@ public class ReservaVuelo5Controller implements Initializable {
     
     public void ejecutarTarea(){
         Label lblIda = new Label();
-        String partes[] = fechaIda.split("/");
-        String mes = obtenerNombreMes(Integer.parseInt(partes[1]));
-        lblIda.setText("Vuelo ida "+partes[0]+" de "+mes); //adio
+        lblIda.setText("Vuelo ida "+fechaIda.getDayOfMonth()+" de "+fechaIda.getMonth().JANUARY); //adio
         lblIda.setStyle("-fx-font-weight: bold;");
         Label lblRutaIda = new Label();
         String origen = vueloIda.getOrigen();

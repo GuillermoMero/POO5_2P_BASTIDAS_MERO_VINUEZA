@@ -129,6 +129,7 @@ public class ReservaVuelo1Controller implements Initializable {
                         }
                         System.out.println("Mostrando vuelo"+(i+1));
                         crearBorderPane(v);
+                        ReservaVuelo5Controller.vueloIda = v;
                     }
                 }
                 System.out.println("Termina hilo "+Thread.currentThread());
