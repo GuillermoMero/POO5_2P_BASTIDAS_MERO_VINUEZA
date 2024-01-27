@@ -304,18 +304,18 @@ public class ReservaVuelo4Controller implements Initializable {
             @Override
             public void handle(MouseEvent m){
                 Stage s = (Stage) v.getScene().getWindow();
-                FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo3.fxml"));
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo5.fxml"));
                 ReservaVuelo3Controller.origenSeleccionado = ReservaVuelo1Controller.destinoSeleccionado;
                 ReservaVuelo3Controller.destinoSeleccionado = ReservaVuelo1Controller.origenSeleccionado;
-                Parent rootVuelo3 = null;
+                Parent rootVuelo5 = null;
                 try{
-                    rootVuelo3 = fl.load();
+                    rootVuelo5 = fl.load();
                 }catch(IOException e){
                     
                 }
-                Scene scene = new Scene(rootVuelo3);
+                Scene scene = new Scene(rootVuelo5);
                 s.setScene(scene);
-                s.setTitle("Reserva vuelo 3");
+                s.setTitle("Reserva vuelo 5");
                 s.show();
             }
         });

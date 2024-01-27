@@ -26,6 +26,7 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$2.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$5.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$4.class
+com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$2.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$4.class
 module-info.class
@@ -39,9 +40,11 @@ modelo\Tarifa.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$4.class
 com\mycompany\proyecto2p_grupo2\DetallesPromocionController$1.class
+com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$2.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller.class
 modelo\Cliente.class
 com\mycompany\proyecto2p_grupo2\BienvenidosController.class
 com\mycompany\proyecto2p_grupo2\DetallesPromocionController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$3.class
+com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller.class
