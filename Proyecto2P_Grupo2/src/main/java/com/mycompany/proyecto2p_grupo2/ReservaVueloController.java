@@ -43,6 +43,7 @@ public class ReservaVueloController implements Initializable {
             cargarOrigenes();
             cargarDestino();
             cargarSpinner();
+            cambiarIdioma();
         }catch(IOException | RuntimeException e){
             
         }
@@ -88,6 +89,10 @@ public class ReservaVueloController implements Initializable {
         spCantidades.setValueFactory(valores);
     }
     
+    public void cambiarIdioma(){
+        dpSalida.setConverter(new SpanishDateConverter());
+        dpRegreso.setConverter(new SpanishDateConverter());
+    }
     @FXML
     void buscar(ActionEvent e){
         Stage s = (Stage)btnBuscar.getScene().getWindow();

@@ -1,4 +1,5 @@
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller.class
+com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$4.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$5.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$2.class
@@ -17,6 +18,7 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$2$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller.class
 com\mycompany\proyecto2p_grupo2\DetallesPromocionController$2.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$4.class
+com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$5.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$1.class
 modelo\Promocion.class
@@ -33,6 +35,7 @@ module-info.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$3.class
 modelo\Vuelo.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$2.class
+com\mycompany\proyecto2p_grupo2\SpanishDateConverter.class
 com\mycompany\proyecto2p_grupo2\Main.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$1.class

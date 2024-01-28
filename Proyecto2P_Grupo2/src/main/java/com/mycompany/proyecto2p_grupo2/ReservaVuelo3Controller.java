@@ -93,6 +93,7 @@ public class ReservaVuelo3Controller implements Initializable {
                         }
                         System.out.println("Mostrando vuelo"+(i+1));
                         crearBorderPane(v);
+                        
                     }
                 }
                 System.out.println("Termina hilo "+Thread.currentThread());
@@ -181,6 +182,7 @@ public class ReservaVuelo3Controller implements Initializable {
         bp.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent m){
+                ReservaVuelo5Controller.vueloRegreso = v;
                 ReservaVuelo4Controller.precioVuelo = v.getPrecio();
                 Stage s = (Stage)bp.getScene().getWindow();
                 FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo4.fxml"));

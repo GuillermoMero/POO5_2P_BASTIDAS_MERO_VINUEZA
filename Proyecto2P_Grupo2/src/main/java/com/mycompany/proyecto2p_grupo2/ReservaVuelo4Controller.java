@@ -131,7 +131,7 @@ public class ReservaVuelo4Controller implements Initializable {
             @Override
             public void run(){
                 seccionTarifas.getChildren().addAll(vbTarifa1);
-                mostrarVuelo3(vbTarifa1);
+                mostrarVuelo3(vbTarifa1, valor);
             }
         });
     }
@@ -207,7 +207,7 @@ public class ReservaVuelo4Controller implements Initializable {
             @Override
             public void run(){
                 seccionTarifas.getChildren().addAll(vbTarifa2);
-                mostrarVuelo3(vbTarifa2);
+                mostrarVuelo3(vbTarifa2, valor);
             }
         });
     }
@@ -294,15 +294,16 @@ public class ReservaVuelo4Controller implements Initializable {
             @Override
             public void run(){
                 seccionTarifas.getChildren().addAll(vbTarifa3);
-                mostrarVuelo3(vbTarifa3);
+                mostrarVuelo3(vbTarifa3, valor);
             }
         });
     }
     
-    public void mostrarVuelo3(VBox v){
+    public void mostrarVuelo3(VBox v, double valor){
         v.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent m){
+                ReservaVuelo5Controller.vueloRegreso.setPrecio(valor);
                 Stage s = (Stage) v.getScene().getWindow();
                 FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo5.fxml"));
                 ReservaVuelo3Controller.origenSeleccionado = ReservaVuelo1Controller.destinoSeleccionado;

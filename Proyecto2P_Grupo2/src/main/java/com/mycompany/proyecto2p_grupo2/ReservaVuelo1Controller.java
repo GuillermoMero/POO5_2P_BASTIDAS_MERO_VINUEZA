@@ -191,6 +191,7 @@ public class ReservaVuelo1Controller implements Initializable {
         bp.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent m){
+                ReservaVuelo5Controller.vueloIda = v;
                 ReservaVuelo2Controller.precioVuelo = v.getPrecio();
                 Stage s = (Stage)bp.getScene().getWindow();
                 FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo2.fxml"));
