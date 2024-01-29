@@ -4,16 +4,22 @@
  */
 package com.mycompany.proyecto2p_grupo2;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Point3D;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -21,6 +27,8 @@ import javafx.scene.layout.HBox;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
+import javafx.stage.Stage;
+import modelo.Tarifa;
 import modelo.Vuelo;
 
 /**
@@ -43,6 +51,8 @@ public class ReservaVuelo5Controller implements Initializable {
     public static LocalDate fechaRegreso;
     public static Vuelo vueloIda;
     public static Vuelo vueloRegreso;
+    public static Tarifa tarifaIda;
+    public static Tarifa tarifaRegreso;
     
     @FXML
     private VBox seccionResumenes;
@@ -142,6 +152,7 @@ public class ReservaVuelo5Controller implements Initializable {
             @Override
             public void run(){
                 seccionResumenes.getChildren().add(seccionIda);
+                mostrarDetallesVuelo(vueloIda, btnDetalles);
             }
         });
         
@@ -212,6 +223,7 @@ public class ReservaVuelo5Controller implements Initializable {
             @Override
             public void run(){
                 seccionResumenes.getChildren().add(seccionIda);
+                mostrarDetallesVuelo(vueloRegreso, btnDetalles);
             }
         });
         
@@ -249,5 +261,27 @@ public class ReservaVuelo5Controller implements Initializable {
         } else {
             return "Mes no válido";
         }
+    }
+    
+    public void mostrarDetallesVuelo(Vuelo v, Button btn){
+        btn.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e){
+                Stage s = new Stage();
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("DetallesPromocion.fxml"));
+                Parent rootDetallesVuelo = null;
+                try{
+                    rootDetallesVuelo = fl.load();
+                }catch(IOException i){
+                    i.printStackTrace();
+                }
+                DetallesVueloController.vuelo = v;
+                Scene ventanaDV = new Scene(rootDetallesVuelo);
+                s.setTitle("Detalles Vuelo");
+                s.setScene(ventanaDV);
+                s.show();
+            }
+        });
+        
     }
 }
