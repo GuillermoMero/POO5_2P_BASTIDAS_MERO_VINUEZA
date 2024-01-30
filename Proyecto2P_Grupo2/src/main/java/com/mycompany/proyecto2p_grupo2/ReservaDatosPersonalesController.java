@@ -11,10 +11,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 
 /**
@@ -30,6 +34,7 @@ public class ReservaDatosPersonalesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cargarFormulario();
     }    
     
     public static int numPasajeros;
@@ -42,7 +47,7 @@ public class ReservaDatosPersonalesController implements Initializable {
             @Override
             public void run(){
                 System.out.println("Empieza hilo "+Thread.currentThread());
-                for(int i=0; i<numPasajeros; i++){
+                for(int i=1; i<=numPasajeros; i++){
                     try{
                         Thread.sleep(1000);
                     }catch(InterruptedException e){
@@ -74,44 +79,61 @@ public class ReservaDatosPersonalesController implements Initializable {
         gpDatos.setPadding(new Insets(20,20,20,20));
         gpDatos.setPrefWidth(540);
         gpDatos.setPrefHeight(135);
-        gpDatos.getColumnConstraints().get(0).setMinWidth(10);
-        gpDatos.getColumnConstraints().get(0).setPrefWidth(73.66666666666667);
-        gpDatos.getColumnConstraints().get(0).setMaxWidth(130.33334350585938);
-        gpDatos.getColumnConstraints().get(0).setPercentWidth(-1);
-        gpDatos.getColumnConstraints().get(1).setMinWidth(10);
-        gpDatos.getColumnConstraints().get(1).setPrefWidth(146.33334859212243);
-        gpDatos.getColumnConstraints().get(1).setMaxWidth(146.33334859212243);
-        gpDatos.getColumnConstraints().get(1).setPercentWidth(-1);
-        gpDatos.getColumnConstraints().get(2).setMinWidth(4.000055948893248);
-        gpDatos.getColumnConstraints().get(2).setPrefWidth(67.66666666666669);
-        gpDatos.getColumnConstraints().get(2).setMaxWidth(211.66667683919275);
-        gpDatos.getColumnConstraints().get(2).setPercentWidth(-1);
-        gpDatos.getColumnConstraints().get(3).setMinWidth(10);
-        gpDatos.getColumnConstraints().get(3).setPrefWidth(74.33335367838544);
-        gpDatos.getColumnConstraints().get(3).setMaxWidth(190.33333333333331);
-        gpDatos.getColumnConstraints().get(3).setPercentWidth(-1);
-        gpDatos.getColumnConstraints().get(4).setMinWidth(10);
-        gpDatos.getColumnConstraints().get(4).setPrefWidth(146.3333129882813);
-        gpDatos.getColumnConstraints().get(4).setMaxWidth(221.33335367838544);
-        gpDatos.getColumnConstraints().get(4).setPercentWidth(-1);
-        gpDatos.getRowConstraints().get(0).setPrefHeight(76.66664632161458);
-        gpDatos.getRowConstraints().get(0).setMaxHeight(79.33332443237306);
-        gpDatos.getRowConstraints().get(1).setPrefHeight(76.66668701171875);
-        gpDatos.getRowConstraints().get(1).setMaxHeight(115.99998092651366);
-        gpDatos.getColumnConstraints().get(0).setHalignment(HPos.CENTER);
-        gpDatos.getColumnConstraints().get(3).setHalignment(HPos.CENTER);
+        ColumnConstraints colum0 = new ColumnConstraints();
+        colum0.setMinWidth(10);
+        colum0.setPrefWidth(73.66666666666667);
+        colum0.setMaxWidth(130.33334350585938);
+        colum0.setPercentWidth(-1);
+        colum0.setHalignment(HPos.CENTER);
+        ColumnConstraints colum1 = new ColumnConstraints();
+        colum1.setMinWidth(10);
+        colum1.setPrefWidth(146.33334859212243);
+        colum1.setMaxWidth(146.33334859212243);
+        colum1.setPercentWidth(-1);
+        ColumnConstraints colum2 = new ColumnConstraints();
+        colum2.setMinWidth(4.000055948893248);
+        colum2.setPrefWidth(67.66666666666669);
+        colum2.setMaxWidth(211.66667683919275);
+        colum2.setPercentWidth(-1);
+        ColumnConstraints colum3 = new ColumnConstraints();
+        colum3.setMinWidth(10);
+        colum3.setPrefWidth(74.33335367838544);
+        colum3.setMaxWidth(190.33333333333331);
+        colum3.setPercentWidth(-1);
+        colum3.setHalignment(HPos.CENTER);
+        ColumnConstraints colum4 = new ColumnConstraints();
+        colum4.setMinWidth(10);
+        colum4.setPrefWidth(146.3333129882813);
+        colum4.setMaxWidth(221.33335367838544);
+        colum4.setPercentWidth(-1);
+        gpDatos.getColumnConstraints().addAll(colum0,colum1,colum2,colum3,colum4);
+        RowConstraints row0 = new RowConstraints();
+        row0.setPrefHeight(76.66664632161458);
+        row0.setMaxHeight(79.33332443237306);
+        row0.setValignment(VPos.CENTER);
+        RowConstraints row1 = new RowConstraints();
+        row1.setPrefHeight(76.66668701171875);
+        row1.setMaxHeight(115.99998092651366);
+        row1.setValignment(VPos.CENTER);
         Label lblNombre = new Label();
         lblNombre.setText("Nombre:");
+        lblNombre.setAlignment(Pos.CENTER_LEFT);
         Label lblApellido = new Label();
         lblApellido.setText("Apellido:");
+        lblApellido.setAlignment(Pos.CENTER_LEFT);
         Label lblPasaporte = new Label();
         lblPasaporte.setText("Pasajarte:");
+        lblPasaporte.setAlignment(Pos.CENTER_LEFT);
         Label lblCorreo = new Label();
         lblCorreo.setText("Correo:");
         TextField txtNombre = new TextField();
+        txtNombre.setAlignment(Pos.CENTER_LEFT);
         TextField txtApellido = new TextField();
+        txtApellido.setAlignment(Pos.CENTER_LEFT);
         TextField txtPasaporte = new TextField();
+        txtPasaporte.setAlignment(Pos.CENTER_LEFT);
         TextField txtCorreo = new TextField();
+        txtCorreo.setAlignment(Pos.CENTER_LEFT);
         gpDatos.add(lblNombre, 0, 0);
         gpDatos.add(lblApellido,0,1);
         gpDatos.add(txtNombre, 1, 0);
@@ -127,5 +149,9 @@ public class ReservaDatosPersonalesController implements Initializable {
                 seccionDatos.getChildren().add(seccionFormulario);
             }
         });
+    }
+    
+    public void ejemplo(){
+        //holaaaaaa
     }
 }

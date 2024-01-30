@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservaDatosPersonalesController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="765.0" prefWidth="579.0">
          <children>
@@ -23,21 +23,21 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <VBox fx:id="seccionDatos" prefHeight="679.0" prefWidth="580.0">
+                  <VBox fx:id="seccionDatos" prefHeight="679.0" prefWidth="580.0" spacing="20.0">
                      <children>
                         <VBox prefHeight="165.0" prefWidth="540.0">
                            <children>
                               <HBox prefHeight="29.0" prefWidth="540.0">
                                  <children>
-                                    <Label text="Label">
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
+                                    <Label style="-fx-font-weight: bold;" text="Label">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
                               </HBox>
                               <GridPane prefHeight="135.0" prefWidth="540.0" style="-fx-border-color: Black;">
                                 <columnConstraints>

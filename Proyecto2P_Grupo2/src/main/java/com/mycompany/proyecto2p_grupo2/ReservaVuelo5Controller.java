@@ -263,6 +263,7 @@ public class ReservaVuelo5Controller implements Initializable {
                     
                 }
                 seccionResumenes.getChildren().add(btnContinuar);
+                mostrarReservaDatosPersonales(btnContinuar);
             }
         });
     }
@@ -287,7 +288,10 @@ public class ReservaVuelo5Controller implements Initializable {
      * @param v Objeto Vuelo asociado al botón.
      * @param btn Botón que activa la acción.
      */
+<<<<<<< HEAD
     
+=======
+>>>>>>> a4b1c886dca5006e882c27acb2b6601e277fbfe1
     public void mostrarDetallesVueloIda(Vuelo v, Button btn){
         btn.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -325,6 +329,26 @@ public class ReservaVuelo5Controller implements Initializable {
                 Scene ventanaDV = new Scene(rootDetallesVuelo);
                 s.setTitle("Detalles Vuelo regreso");
                 s.setScene(ventanaDV);
+                s.show();
+            }
+        });
+    }
+    
+    public void mostrarReservaDatosPersonales(Button btn){
+        btn.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e){
+                Stage s = (Stage) btn.getScene().getWindow();
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaDatosPersonales.fxml"));
+                Parent rootReservaDP = null;
+                try{
+                    rootReservaDP = fl.load();
+                }catch (IOException i){
+                    
+                }
+                Scene vetanaRservaDP = new Scene(rootReservaDP);
+                s.setTitle("Reserva Datos Personales");
+                s.setScene(vetanaRservaDP);
                 s.show();
             }
         });
