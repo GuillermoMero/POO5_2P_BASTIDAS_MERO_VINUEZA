@@ -98,7 +98,7 @@ public class ReservaVueloController implements Initializable {
      */
     
     public void cargarSpinner(){
-        SpinnerValueFactory<Integer> valores = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, 1);
+        SpinnerValueFactory<Integer> valores = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1);
         spCantidades.setValueFactory(valores);
     }
     

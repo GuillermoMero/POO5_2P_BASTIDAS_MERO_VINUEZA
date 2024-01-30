@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="239.0" prefWidth="473.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.CancelarProcesoController">
+   <children>
+      <HBox alignment="CENTER" layoutX="2.0" layoutY="26.0" prefHeight="74.0" prefWidth="479.0">
+         <children>
+            <Label text="Cancelar Compra" textFill="#7b6458">
+               <font>
+                  <Font name="Arial Black" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="5.0" layoutY="111.0" prefHeight="31.0" prefWidth="474.0">
+         <children>
+            <Label text="¿Está seguro de cancelar el proceso de compra?" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="5.0" layoutY="148.0" prefHeight="73.0" prefWidth="474.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnSi" mnemonicParsing="false" onAction="#canceloCompra" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #7B6458;" text="Si" textFill="#faf7f7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnNo" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: #7B6458;" text="No" textFill="#f4f0f0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

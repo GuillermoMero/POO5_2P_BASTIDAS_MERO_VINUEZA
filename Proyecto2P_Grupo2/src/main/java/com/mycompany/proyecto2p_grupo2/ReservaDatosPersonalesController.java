@@ -4,15 +4,22 @@
  */
 package com.mycompany.proyecto2p_grupo2;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
@@ -20,6 +27,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -42,6 +50,11 @@ public class ReservaDatosPersonalesController implements Initializable {
     @FXML
     private VBox seccionDatos;
     
+    private TextField txtNombre;
+    private TextField txtApellido;
+    private TextField txtPasaporte;
+    private TextField txtCorreo;
+    
     public void cargarFormulario(){
         Thread t = new Thread(new Runnable(){
             @Override
@@ -54,7 +67,14 @@ public class ReservaDatosPersonalesController implements Initializable {
                         
                     }
                     crearFormulario(i);
+                    
                 }
+                try{
+                    Thread.sleep(1000);
+                }catch(InterruptedException e){
+                
+                }
+                cargarBoton();
                 System.out.println("Termina hilo "+Thread.currentThread());
             }
         });
@@ -164,5 +184,40 @@ public class ReservaDatosPersonalesController implements Initializable {
         });
     }
     
+    public void cargarBoton(){
+        HBox seccionBoton = new HBox();
+        Button btnContinuar = new Button();
+        btnContinuar.setText("Continuar");
+        btnContinuar.setStyle("-fx-font-weight: bold; -fx-background-color: #7B6458; -fx-border-radius: 5; -fx-border-color: White; -fx-border-width: 3; -fx-background-radius: 8;-fx-text-fill: White;");
+        Label lblMensaje = new Label();
+        seccionBoton.getChildren().addAll(lblMensaje,btnContinuar);
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run(){
+                seccionDatos.getChildren().add(seccionBoton);
+                mostrarPago(btnContinuar);
+            }
+        });
+    }
+    
+    public void mostrarPago(Button btn){
+        btn.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e){
+                Stage s = (Stage) btn.getScene().getWindow();
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("PagoA.fxml"));
+                Parent rootPago = null;
+                try{
+                    rootPago = fl.load();
+                }catch(IOException i){
+                    i.printStackTrace();
+                }
+                Scene ventanaPago = new Scene(rootPago);
+                s.setTitle("Pago");
+                s.setScene(ventanaPago);
+                s.show();
+            }
+        });
+    }
     
 }

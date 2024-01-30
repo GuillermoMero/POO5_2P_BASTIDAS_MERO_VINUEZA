@@ -3,74 +3,22 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservaDatosPersonalesController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservaDatosPersonalesController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="765.0" prefWidth="579.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="962.0" prefWidth="583.0">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="768.0" prefWidth="580.0" spacing="30.0">
+            <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="963.0" prefWidth="581.0" spacing="30.0">
                <children>
-                  <Label text="Datos Personales">
+                  <Label text="Datos Personales" textFill="#7b6458">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <VBox fx:id="seccionDatos" prefHeight="679.0" prefWidth="580.0" spacing="20.0">
-                     <children>
-                        <VBox prefHeight="165.0" prefWidth="540.0">
-                           <children>
-                              <HBox prefHeight="29.0" prefWidth="540.0">
-                                 <children>
-                                    <Label style="-fx-font-weight: bold;" text="Label">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                              </HBox>
-                              <GridPane prefHeight="135.0" prefWidth="540.0" style="-fx-border-color: Black;">
-                                <columnConstraints>
-                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="130.33334350585938" minWidth="10.0" prefWidth="73.66666666666667" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.99994405110675" minWidth="10.0" prefWidth="146.33334859212243" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.66667683919275" minWidth="4.000055948893248" prefWidth="67.66666666666669" />
-                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="190.33333333333331" minWidth="10.0" prefWidth="74.33335367838544" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.33335367838544" minWidth="10.0" prefWidth="146.3333129882813" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints maxHeight="79.33332443237306" minHeight="10.0" prefHeight="76.66664632161458" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="115.99998092651366" minHeight="10.0" prefHeight="76.66668701171875" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <Label text="Nombre:" />
-                                    <Label text="Apellido:" GridPane.rowIndex="1" />
-                                    <Label text="Pasaporte:" GridPane.columnIndex="3" />
-                                    <TextField GridPane.columnIndex="1" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <TextField GridPane.columnIndex="4" />
-                                    <TextField GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                    <Label text="Correo:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                                 <padding>
-                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                 </padding>
-                              </GridPane>
-                           </children>
-                        </VBox>
-                     </children>
+                  <VBox fx:id="seccionDatos" prefHeight="779.0" prefWidth="541.0" spacing="20.0">
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </VBox.margin>
