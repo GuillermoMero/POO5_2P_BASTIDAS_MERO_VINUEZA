@@ -75,10 +75,11 @@ public class ReservaDatosPersonalesController implements Initializable {
         lblPasajero.setText("Pasajero "+i+":");
         seccionLabel.getChildren().add(lblPasajero);
         GridPane gpDatos = new GridPane();
-        gpDatos.setStyle("-fx-border-color:black;");
-        gpDatos.setPadding(new Insets(20,20,20,20));
+        gpDatos.setStyle("-fx-border-color:#7b6458;");
+        gpDatos.setPadding(new Insets(30,20,30,20));
         gpDatos.setPrefWidth(540);
         gpDatos.setPrefHeight(135);
+        gpDatos.setVgap(20);
         ColumnConstraints colum0 = new ColumnConstraints();
         colum0.setMinWidth(10);
         colum0.setPrefWidth(73.66666666666667);
@@ -108,12 +109,16 @@ public class ReservaDatosPersonalesController implements Initializable {
         colum4.setPercentWidth(-1);
         gpDatos.getColumnConstraints().addAll(colum0,colum1,colum2,colum3,colum4);
         RowConstraints row0 = new RowConstraints();
+        row0.setMinHeight(10);
         row0.setPrefHeight(76.66664632161458);
         row0.setMaxHeight(79.33332443237306);
+        row0.setPercentHeight(-1);
         row0.setValignment(VPos.CENTER);
         RowConstraints row1 = new RowConstraints();
+        row1.setMinHeight(10);
         row1.setPrefHeight(76.66668701171875);
         row1.setMaxHeight(115.99998092651366);
+        row1.setPercentHeight(-1);
         row1.setValignment(VPos.CENTER);
         Label lblNombre = new Label();
         lblNombre.setText("Nombre:");
@@ -135,13 +140,21 @@ public class ReservaDatosPersonalesController implements Initializable {
         TextField txtCorreo = new TextField();
         txtCorreo.setAlignment(Pos.CENTER_LEFT);
         gpDatos.add(lblNombre, 0, 0);
+        GridPane.setHalignment(lblNombre, javafx.geometry.HPos.CENTER);
         gpDatos.add(lblApellido,0,1);
+        GridPane.setHalignment(lblApellido, javafx.geometry.HPos.CENTER);
         gpDatos.add(txtNombre, 1, 0);
+        GridPane.setHalignment(txtNombre, javafx.geometry.HPos.CENTER);
         gpDatos.add(txtApellido, 1, 1);
+        GridPane.setHalignment(txtApellido, javafx.geometry.HPos.CENTER);
         gpDatos.add(lblPasaporte, 3, 0);
+        GridPane.setHalignment(lblPasaporte, javafx.geometry.HPos.CENTER);
         gpDatos.add(lblCorreo, 3, 1);
+        GridPane.setHalignment(lblCorreo, javafx.geometry.HPos.CENTER);
         gpDatos.add(txtPasaporte, 4, 0);
+        GridPane.setHalignment(txtPasaporte, javafx.geometry.HPos.CENTER);
         gpDatos.add(txtCorreo, 4, 1);
+        GridPane.setHalignment(txtCorreo, javafx.geometry.HPos.CENTER);
         seccionFormulario.getChildren().addAll(seccionLabel, gpDatos);
         Platform.runLater(new Runnable(){
             @Override
@@ -151,7 +164,5 @@ public class ReservaDatosPersonalesController implements Initializable {
         });
     }
     
-    public void ejemplo(){
-        //holaaaaaa
-    }
+    
 }
