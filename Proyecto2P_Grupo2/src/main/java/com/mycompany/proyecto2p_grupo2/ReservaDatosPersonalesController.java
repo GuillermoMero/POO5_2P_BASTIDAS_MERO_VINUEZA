@@ -128,4 +128,8 @@ public class ReservaDatosPersonalesController implements Initializable {
             }
         });
     }
+    
+    public void ejemplo(){
+        //holaaaaaa
+    }
 }
