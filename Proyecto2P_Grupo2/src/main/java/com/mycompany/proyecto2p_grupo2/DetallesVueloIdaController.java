@@ -20,7 +20,7 @@ import modelo.Vuelo;
  *
  * @author LENOVO
  */
-public class DetallesVueloController implements Initializable {
+public class DetallesVueloIdaController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -29,10 +29,9 @@ public class DetallesVueloController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         cargarLabels();
-    }    
+    } 
     
     public static Vuelo vuelo;
-    
     public static Tarifa tarifa;
     
     @FXML

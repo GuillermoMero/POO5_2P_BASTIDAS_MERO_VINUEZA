@@ -303,7 +303,7 @@ public class ReservaVuelo2Controller implements Initializable {
         v.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent m){
-                ReservaVuelo5Controller.tarifaIda = t;
+                DetallesVueloIdaController.tarifa = t;
                 ReservaVuelo5Controller.vueloIda.setPrecio(valor);
                 Stage s = (Stage) v.getScene().getWindow();
                 FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo3.fxml"));

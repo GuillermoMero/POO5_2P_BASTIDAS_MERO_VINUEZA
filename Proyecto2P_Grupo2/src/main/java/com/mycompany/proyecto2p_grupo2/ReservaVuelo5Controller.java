@@ -51,8 +51,6 @@ public class ReservaVuelo5Controller implements Initializable {
     public static LocalDate fechaRegreso;
     public static Vuelo vueloIda;
     public static Vuelo vueloRegreso;
-    public static Tarifa tarifaIda;
-    public static Tarifa tarifaRegreso;
     
     @FXML
     private VBox seccionResumenes;
@@ -152,7 +150,7 @@ public class ReservaVuelo5Controller implements Initializable {
             @Override
             public void run(){
                 seccionResumenes.getChildren().add(seccionIda);
-                mostrarDetallesVuelo(vueloIda, btnDetalles);
+                mostrarDetallesVueloIda(vueloIda, btnDetalles);
             }
         });
         
@@ -223,7 +221,7 @@ public class ReservaVuelo5Controller implements Initializable {
             @Override
             public void run(){
                 seccionResumenes.getChildren().add(seccionIda);
-                mostrarDetallesVuelo(vueloRegreso, btnDetalles);
+                mostrarDetallesVueloRegreso(vueloRegreso, btnDetalles);
             }
         });
         
@@ -263,25 +261,45 @@ public class ReservaVuelo5Controller implements Initializable {
         }
     }
     
-    public void mostrarDetallesVuelo(Vuelo v, Button btn){
+    public void mostrarDetallesVueloIda(Vuelo v, Button btn){
         btn.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e){
                 Stage s = new Stage();
-                FXMLLoader fl = new FXMLLoader(Main.class.getResource("DetallesPromocion.fxml"));
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("DetallesVueloIda.fxml"));
                 Parent rootDetallesVuelo = null;
                 try{
                     rootDetallesVuelo = fl.load();
                 }catch(IOException i){
                     i.printStackTrace();
                 }
-                DetallesVueloController.vuelo = v;
+                DetallesVueloIdaController.vuelo = v;
                 Scene ventanaDV = new Scene(rootDetallesVuelo);
-                s.setTitle("Detalles Vuelo");
+                s.setTitle("Detalles Vuelo ida");
                 s.setScene(ventanaDV);
                 s.show();
             }
         });
-        
+    }
+    
+    public void mostrarDetallesVueloRegreso(Vuelo v, Button btn){
+        btn.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e){
+                Stage s = new Stage();
+                FXMLLoader fl = new FXMLLoader(Main.class.getResource("DetallesVueloRegreso.fxml"));
+                Parent rootDetallesVuelo = null;
+                try{
+                    rootDetallesVuelo = fl.load();
+                }catch(IOException i){
+                    i.printStackTrace();
+                }
+                DetallesVueloIdaController.vuelo = v;
+                Scene ventanaDV = new Scene(rootDetallesVuelo);
+                s.setTitle("Detalles Vuelo regreso");
+                s.setScene(ventanaDV);
+                s.show();
+            }
+        });
     }
 }
