@@ -113,6 +113,7 @@ public class ReservaVueloController implements Initializable {
             }catch(IOException i){
                 
             }
+            ReservaDatosPersonalesController.numPasajeros = spCantidades.getValue();
             ReservaVuelo1Controller rc1 = fl.getController();
             rc1.cargarTitulo();
             ReservaVuelo1Controller.origenSeleccionado = cbOrigenes.getValue();

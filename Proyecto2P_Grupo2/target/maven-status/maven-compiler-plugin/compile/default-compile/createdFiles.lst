@@ -6,6 +6,7 @@ com\mycompany\proyecto2p_grupo2\DetallesVueloRegresoController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$2.class
 modelo\DatosNoIngresadosException.class
 com\mycompany\proyecto2p_grupo2\InicioController.class
+com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$5.class
@@ -28,6 +29,7 @@ modelo\Reserva.class
 com\mycompany\proyecto2p_grupo2\ReservasCreadasController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$2.class
+com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$5.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$4.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$2.class
@@ -55,3 +57,4 @@ com\mycompany\proyecto2p_grupo2\BienvenidosController.class
 com\mycompany\proyecto2p_grupo2\DetallesPromocionController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller.class
+com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController$2.class
