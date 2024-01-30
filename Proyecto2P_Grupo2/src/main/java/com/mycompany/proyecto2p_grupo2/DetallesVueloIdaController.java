@@ -20,26 +20,18 @@ import modelo.Vuelo;
  *
  * @author LENOVO
  */
-public class DetallesVueloController implements Initializable {
+public class DetallesVueloIdaController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-    /**
-     * Método llamado automáticamente al cargar la vista.
-     * Inicializa la visualización de detalles del vuelo.
-     * @param url URL no utilizada.
-     * @param rb ResourceBundle no utilizado.
-     */
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         cargarLabels();
-    }    
+    } 
     
     public static Vuelo vuelo;
-    
     public static Tarifa tarifa;
     
     @FXML
@@ -54,21 +46,11 @@ public class DetallesVueloController implements Initializable {
     @FXML
     private Button btnCerrar;
     
-    /**
-     * Método que carga la información del vuelo y tarifa en las etiquetas correspondientes.
-     */
-    
     public void cargarLabels(){
         lblNumVuelo.setText("Vuelo: "+vuelo.getNumVuelo());
         lblCodigo.setText(vuelo.getCodigoAvion());
         lblTarifa.setText("Tarifa "+tarifa.getTipo());
     }
-    
-    /**
-     * Método que se llama cuando se hace clic en el botón de cerrar.
-     * Cierra la ventana de detalles de vuelo.
-     * @param e Evento de acción generado por el clic del botón.
-     */
     
     @FXML
     void cerrar(ActionEvent e){

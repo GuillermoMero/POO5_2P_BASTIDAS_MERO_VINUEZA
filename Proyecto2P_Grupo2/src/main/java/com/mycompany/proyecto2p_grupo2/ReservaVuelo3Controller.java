@@ -214,6 +214,7 @@ public class ReservaVuelo3Controller implements Initializable {
             public void handle(MouseEvent m){
                 ReservaVuelo5Controller.vueloRegreso = v;
                 ReservaVuelo4Controller.precioVuelo = v.getPrecio();
+                DetallesVueloRegresoController.vuelo = v;
                 Stage s = (Stage)bp.getScene().getWindow();
                 FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo4.fxml"));
                 Parent rootVuelo4 = null;

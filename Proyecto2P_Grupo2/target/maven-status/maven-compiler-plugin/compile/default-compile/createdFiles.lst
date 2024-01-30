@@ -2,10 +2,12 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$4.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$5.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller.class
+com\mycompany\proyecto2p_grupo2\DetallesVueloRegresoController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$2.class
 modelo\DatosNoIngresadosException.class
 com\mycompany\proyecto2p_grupo2\PagoAController.class
 com\mycompany\proyecto2p_grupo2\InicioController.class
+com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$5.class
@@ -21,13 +23,14 @@ com\mycompany\proyecto2p_grupo2\DetallesPromocionController$2.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$4.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$5.class
+com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$6.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$1.class
 modelo\Promocion.class
 modelo\Reserva.class
 com\mycompany\proyecto2p_grupo2\ReservasCreadasController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$2.class
-com\mycompany\proyecto2p_grupo2\DetallesVueloController.class
+com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$5.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$4.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$2.class
@@ -36,6 +39,7 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$4.class
 module-info.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$3.class
 modelo\Vuelo.class
+com\mycompany\proyecto2p_grupo2\DetallesVueloIdaController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$5.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$2.class
 com\mycompany\proyecto2p_grupo2\SpanishDateConverter.class
@@ -54,3 +58,4 @@ com\mycompany\proyecto2p_grupo2\BienvenidosController.class
 com\mycompany\proyecto2p_grupo2\DetallesPromocionController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller.class
+com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController$2.class
