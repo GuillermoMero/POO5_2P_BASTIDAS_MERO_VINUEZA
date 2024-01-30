@@ -48,6 +48,10 @@ public class ReservasCreadasController implements Initializable {
     
     private ArrayList<String> a = new ArrayList<>();
     
+    /**
+     * Carga la lista de reservas con datos iniciales y programa una actualización periódica.
+     */
+    
     public void cargarListaReservas(){
        
         a.add("Vacio");
@@ -60,6 +64,10 @@ public class ReservasCreadasController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
+    
+    /**
+     * Actualiza la lista de reservas con nuevos datos.
+     */
     
     public void actualizarLista(){
         ArrayList<String> b = new ArrayList<>();

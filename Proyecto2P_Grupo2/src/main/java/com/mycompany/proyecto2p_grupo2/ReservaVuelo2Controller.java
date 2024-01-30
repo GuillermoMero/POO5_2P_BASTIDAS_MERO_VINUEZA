@@ -30,10 +30,20 @@ import modelo.Tarifa;
  *
  * @author LENOVO
  */
+/**
+ * Controlador para la vista de selección de tarifas (ReservaVuelo2).
+ * Implementa la interfaz Initializable para realizar acciones de inicialización al cargar la vista.
+ */
 public class ReservaVuelo2Controller implements Initializable {
 
     /**
      * Initializes the controller class.
+     */
+    /**
+     * Método llamado automáticamente al cargar la vista.
+     * Inicializa la interfaz de selección de tarifas y ejecuta tareas relacionadas.
+     * @param url URL no utilizada.
+     * @param rb ResourceBundle no utilizado.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -45,6 +55,10 @@ public class ReservaVuelo2Controller implements Initializable {
     
     @FXML
     private VBox seccionTarifas;
+    
+    /**
+     * Método que carga las tarifas en la vista de forma asíncrona utilizando un hilo.
+     */
     
     public void cargarTarifas(){
         Thread t = new Thread(new Runnable(){
@@ -82,6 +96,11 @@ public class ReservaVuelo2Controller implements Initializable {
         t.setName("Mostrar tarifas");
         t.start();
     }
+    
+    /**
+     * Método que muestra una tarifa en la interfaz.
+     * @param t Tarifa a mostrar.
+     */
     
     public void cargarTarifa1(Tarifa t){
         VBox vbTarifa1 = new VBox();
@@ -135,6 +154,8 @@ public class ReservaVuelo2Controller implements Initializable {
             }
         });
     }
+    
+    
     
     public void cargarTarifa2(Tarifa t){
         VBox vbTarifa2 = new VBox();
@@ -298,6 +319,13 @@ public class ReservaVuelo2Controller implements Initializable {
             }
         });
     }
+    
+    /**
+     * Método que muestra la siguiente vista (ReservaVuelo3) al hacer clic en una tarifa.
+     * @param v VBox que representa una tarifa.
+     * @param valor Precio calculado de la tarifa.
+     * @param t Tarifa seleccionada.
+     */
     
     public void mostrarVuelo3(VBox v, double valor, Tarifa t){
         v.setOnMouseClicked(new EventHandler<MouseEvent>(){

@@ -57,6 +57,10 @@ public class ReservaVuelo5Controller implements Initializable {
     @FXML
     private VBox seccionResumenes;
     
+    /**
+     * Carga el resumen de la reserva en un hilo de ejecución.
+     */
+    
     public void cargarResumen(){
         Thread t = new Thread(new Runnable(){
             @Override
@@ -86,6 +90,10 @@ public class ReservaVuelo5Controller implements Initializable {
         t.setName("Mostrar resumen de reserva");
         t.start();
     }
+    
+    /**
+     * Carga la información del vuelo de ida en la interfaz.
+     */
     
     public void cargarIda(){
         Label lblIda = new Label();
@@ -157,6 +165,9 @@ public class ReservaVuelo5Controller implements Initializable {
         });
         
     }
+    /**
+     * Carga la información del vuelo de regreso en la interfaz.
+     */
     
     public void cargarRegreso(){
         Label lblIda = new Label();
@@ -229,6 +240,10 @@ public class ReservaVuelo5Controller implements Initializable {
         
     }
     
+    /**
+     * Carga el botón "Continuar" en la interfaz.
+     */
+    
     public void cargarBoton(){
         HBox hTotal = new HBox();
         hTotal.setAlignment(Pos.CENTER_RIGHT);
@@ -254,6 +269,12 @@ public class ReservaVuelo5Controller implements Initializable {
         });
     }
     
+    /**
+     * Obtiene el nombre del mes correspondiente al número del mes.
+     * @param numeroMes Número del mes (1 a 12).
+     * @return Nombre del mes.
+     */
+    
     public static String obtenerNombreMes(int numeroMes) {
         if (numeroMes >= 1 && numeroMes <= 12) {
             // El método values() devuelve un array con los meses, y usamos el índice (numeroMes - 1) para obtener el mes correcto.
@@ -262,6 +283,12 @@ public class ReservaVuelo5Controller implements Initializable {
             return "Mes no válido";
         }
     }
+    
+    /**
+     * Muestra los detalles del vuelo cuando se hace clic en el botón "Detalles del vuelo".
+     * @param v Objeto Vuelo asociado al botón.
+     * @param btn Botón que activa la acción.
+     */
     
     public void mostrarDetallesVuelo(Vuelo v, Button btn){
         btn.setOnAction(new EventHandler<ActionEvent>(){

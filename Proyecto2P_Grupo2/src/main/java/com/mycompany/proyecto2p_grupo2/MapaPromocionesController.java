@@ -40,6 +40,12 @@ public class MapaPromocionesController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    /**
+     * Método llamado automáticamente al cargar la vista.
+     * Inicializa la visualización del mapa de promociones y muestra los puntos de promociones en un hilo separado.
+     * @param url URL no utilizada.
+     * @param rb ResourceBundle no utilizado.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try(FileInputStream input = new FileInputStream("src/main/resources/images/mapa.png")){
@@ -59,6 +65,10 @@ public class MapaPromocionesController implements Initializable {
     
     @FXML
     private AnchorPane root;
+    
+    /**
+     * Método que muestra los puntos de promociones en el mapa en un hilo separado.
+     */
     
     public void mostrarPuntos(){
         ArrayList<Promocion> promos = Promocion.leerPromociones();
@@ -85,6 +95,12 @@ public class MapaPromocionesController implements Initializable {
         t.start();
     }
     
+    /**
+     * Método que carga la imagen de ubicación de la promoción en el mapa.
+     * @param img ImageView para la imagen de ubicación.
+     * @param p Promoción para obtener detalles.
+     */
+    
     public void cargarImagen(ImageView img, Promocion p){
         Platform.runLater(new Runnable(){
             @Override
@@ -105,6 +121,12 @@ public class MapaPromocionesController implements Initializable {
             }
         });
     }
+    
+    /**
+     * Método que muestra detalles de la promoción al hacer clic en el punto de ubicación.
+     * @param i ImageView que representa el punto de ubicación.
+     * @param p Promoción para obtener detalles.
+     */
     
     public void mostrarDetalles(ImageView i, Promocion p){
         i.setOnMouseClicked(new EventHandler<MouseEvent>(){

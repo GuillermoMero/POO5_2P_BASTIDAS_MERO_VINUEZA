@@ -41,6 +41,13 @@ public class ReservaVuelo1Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    /**
+     * Método llamado automáticamente al cargar la vista.
+     * Inicializa la interfaz de selección de vuelos, carga el ComboBox y ejecuta tareas relacionadas.
+     * @param url URL no utilizada.
+     * @param rb ResourceBundle no utilizado.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -61,10 +68,18 @@ public class ReservaVuelo1Controller implements Initializable {
     @FXML
     private VBox seccionVuelos;
     
+    /**
+     * Método que carga el título de la vista con los datos de origen y destino.
+     */
+    
     public void cargarTitulo(){
         String titulo = "Selecciona tu vuelo "+origenSeleccionado+" - "+destinoSeleccionado;
         lblTitulo.setText(titulo);
     }
+    
+    /**
+     * Método que carga los vuelos y ejecuta tareas al seleccionar una opción del ComboBox.
+     */
     
     public void cargarVuelos(){
         cbOrden.setOnAction(new EventHandler<ActionEvent>(){
@@ -75,6 +90,10 @@ public class ReservaVuelo1Controller implements Initializable {
             }
         }); 
     }
+    
+    /**
+     * Método que ejecuta una tarea en un hilo para mostrar los vuelos disponibles.
+     */
     
     public void ejecutarTarea(){
         Thread t = new Thread(new Runnable(){
@@ -111,6 +130,10 @@ public class ReservaVuelo1Controller implements Initializable {
         t.start();
     }
     
+    /**
+     * Método que ejecuta una tarea en un hilo para mostrar los vuelos ordenados por la opción seleccionada.
+     */
+    
     public void ejecutarTareaOrdenada(){
         Thread t = new Thread(new Runnable(){
             @Override
@@ -138,6 +161,11 @@ public class ReservaVuelo1Controller implements Initializable {
         t.setName("Vuelos origen - destino");
         t.start();
     }
+    
+    /**
+     * Método que crea un BorderPane para mostrar la información de un vuelo.
+     * @param v Vuelo para obtener detalles.
+     */
     
     public void crearBorderPane(Vuelo v){
         BorderPane bpVuelos = new BorderPane();
@@ -183,9 +211,19 @@ public class ReservaVuelo1Controller implements Initializable {
         });
     }
     
+    /**
+     * Método que carga las opciones del ComboBox.
+     */
+    
     public void cargarComboBox(){
         cbOrden.getItems().setAll("Precio", "Duración");
     }
+    
+    /**
+     * Método que muestra la vista de ReservaVuelo2 al hacer clic en un vuelo.
+     * @param bp BorderPane que representa un vuelo.
+     * @param v Vuelo seleccionado.
+     */
     
     public void mostrarReservaVuelo2(BorderPane bp, Vuelo v){
         bp.setOnMouseClicked(new EventHandler<MouseEvent>(){

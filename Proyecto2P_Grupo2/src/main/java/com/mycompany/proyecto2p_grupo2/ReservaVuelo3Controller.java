@@ -62,10 +62,17 @@ public class ReservaVuelo3Controller implements Initializable {
     @FXML
     private VBox seccionVuelos;
     
+    /**
+     * Carga el título con la selección de origen y destino.
+     */
     public void cargarTitulo(){
         String titulo = "Selecciona tu vuelo "+origenSeleccionado+" - "+destinoSeleccionado;
         lblTitulo.setText(titulo);
     }
+    
+    /**
+     * Carga la lista de vuelos al iniciar.
+     */
     
     public void cargarVuelos(){
         cbOrden.setOnAction(new EventHandler<ActionEvent>(){
@@ -76,6 +83,10 @@ public class ReservaVuelo3Controller implements Initializable {
             }
         }); 
     }
+    
+    /**
+     * Ejecuta la tarea de carga de vuelos en un hilo.
+     */
     
     public void ejecutarTarea(){
         Thread t = new Thread(new Runnable(){
@@ -103,6 +114,10 @@ public class ReservaVuelo3Controller implements Initializable {
         t.start();
     }
     
+    /**
+     * Ejecuta la tarea de carga de vuelos ordenados en un hilo.
+     */
+    
     public void ejecutarTareaOrdenada(){
         Thread t = new Thread(new Runnable(){
             @Override
@@ -129,6 +144,11 @@ public class ReservaVuelo3Controller implements Initializable {
         t.setName("Vuelos origen - destino");
         t.start();
     }
+    
+     /**
+     * Crea y muestra un elemento gráfico (BorderPane) para un vuelo.
+     * @param v El objeto Vuelo para el que se crea el BorderPane.
+     */
     
     public void crearBorderPane(Vuelo v){
         BorderPane bpVuelos = new BorderPane();
@@ -174,9 +194,19 @@ public class ReservaVuelo3Controller implements Initializable {
         });
     }
     
+    /**
+     * Carga opciones en el ComboBox.
+     */
+    
     public void cargarComboBox(){
         cbOrden.getItems().setAll("Precio", "Duración");
     }
+    
+    /**
+     * Maneja la acción de seleccionar un vuelo y muestra la siguiente ventana.
+     * @param bp El BorderPane asociado al vuelo seleccionado.
+     * @param v El objeto Vuelo seleccionado.
+     */
     
     public void mostrarReservaVuelo4(BorderPane bp, Vuelo v){
         bp.setOnMouseClicked(new EventHandler<MouseEvent>(){

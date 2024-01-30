@@ -46,6 +46,10 @@ public class ReservaVuelo4Controller implements Initializable {
     @FXML
     private VBox seccionTarifas;
     
+    /**
+     * Carga las tarifas en un hilo de ejecución.
+     */
+    
     public void cargarTarifas(){
         Thread t = new Thread(new Runnable(){
             @Override
@@ -82,6 +86,10 @@ public class ReservaVuelo4Controller implements Initializable {
         t.setName("Mostrar tarifas");
         t.start();
     }
+    
+    /**
+     * Muestra la tarifa 1 en la interfaz gráfica.
+     */
     
     public void cargarTarifa1(Tarifa t){
         VBox vbTarifa1 = new VBox();
@@ -135,6 +143,10 @@ public class ReservaVuelo4Controller implements Initializable {
             }
         });
     }
+    
+    /**
+     * Muestra la tarifa 2 en la interfaz gráfica.
+     */
     
     public void cargarTarifa2(Tarifa t){
         VBox vbTarifa2 = new VBox();
@@ -211,6 +223,10 @@ public class ReservaVuelo4Controller implements Initializable {
             }
         });
     }
+    
+    /**
+     * Cargar la interfaz gráfica de la tarifa 3.
+     */
     
     public void cargarTarifa3(Tarifa t){
         VBox vbTarifa3 = new VBox();
@@ -298,6 +314,13 @@ public class ReservaVuelo4Controller implements Initializable {
             }
         });
     }
+    
+    /**
+     * Maneja la acción de seleccionar una tarifa y muestra la siguiente ventana.
+     * @param v La VBox asociada a la tarifa seleccionada.
+     * @param valor El valor de la tarifa.
+     * @param t El objeto Tarifa seleccionado.
+     */
     
     public void mostrarVuelo3(VBox v, double valor, Tarifa t){
         v.setOnMouseClicked(new EventHandler<MouseEvent>(){

@@ -39,6 +39,12 @@ public class InicioController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    /**
+     * Método llamado automáticamente al cargar la vista.
+     * Inicializa la visualización de la imagen de inicio.
+     * @param url URL no utilizada.
+     * @param rb ResourceBundle no utilizado.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -68,6 +74,12 @@ public class InicioController implements Initializable {
     Label lblMensaje;
     
   
+    /**
+     * Método que se llama cuando se hace clic en el botón de inicio de sesión.
+     * Verifica las credenciales ingresadas y carga la siguiente vista si son válidas.
+     * @param e Evento de acción generado por el clic del botón.
+     */
+    
     @FXML
     void iniciarSesion(ActionEvent e){
         String userIngresado = txtUsuario.getText();
@@ -84,6 +96,11 @@ public class InicioController implements Initializable {
             }
         } 
     }
+    /**
+     * Método que carga la vista de bienvenida con el cliente autenticado.
+     * @param c Cliente autenticado.
+     * @param s Stage actual.
+     */
     
     public void cargarBienvenidos(Cliente c, Stage s){
         FXMLLoader f = new FXMLLoader(Main.class.getResource("Bienvenidos.fxml"));
@@ -100,6 +117,11 @@ public class InicioController implements Initializable {
         s.setScene(ventanaBienvenida);
         s.show(); 
     }
+    
+    /**
+     * Método que carga la vista de reservas creadas con el cliente autenticado.
+     * @param c Cliente autenticado.
+     */
     
     public void cargarReservasCreadas(Cliente c){
         Stage s = new Stage();

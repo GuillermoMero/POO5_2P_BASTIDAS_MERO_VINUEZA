@@ -71,6 +71,10 @@ public class ReservaVueloController implements Initializable {
     @FXML
     private Label lblAviso;
     
+    /**
+     * Carga los datos de los origenes en el ComboBox.
+     */
+    
     public void cargarOrigenes(){
         ArrayList<String> origenes = new ArrayList<>();
         origenes.add("Guayaquil");
@@ -79,20 +83,38 @@ public class ReservaVueloController implements Initializable {
         cbOrigenes.getItems().setAll(origenes);
     }
     
+    /**
+     * Carga los destinos desde un archivo en el ComboBox.
+     * @throws IOException Si hay un problema al leer el archivo.
+     */
+    
     public void cargarDestino() throws IOException{
         ArrayList<Destino> destinos = Destino.leerDestinos();
         cbDestinos.getItems().setAll(destinos);
     }
+    
+    /**
+     * Configura el Spinner para seleccionar la cantidad de pasajeros.
+     */
     
     public void cargarSpinner(){
         SpinnerValueFactory<Integer> valores = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, 1);
         spCantidades.setValueFactory(valores);
     }
     
+    /**
+     * Cambia el idioma de los DatePickers a español.
+     */
+    
     public void cambiarIdioma(){
         dpSalida.setConverter(new SpanishDateConverter());
         dpRegreso.setConverter(new SpanishDateConverter());
     }
+    
+    /**
+     * Método invocado cuando se presiona el botón "Buscar".
+     * @param e Evento del botón.
+     */
     @FXML
     void buscar(ActionEvent e){
         Stage s = (Stage)btnBuscar.getScene().getWindow();
@@ -104,6 +126,12 @@ public class ReservaVueloController implements Initializable {
         }
     }
     
+    
+    /**
+     * Muestra la interfaz de ReservaVuelo1 con los datos seleccionados.
+     * @param s Escenario actual.
+     * @throws DatosNoIngresadosException Si no se han ingresado todos los datos necesarios.
+     */
     public void mostrarVuelo1(Stage s) throws DatosNoIngresadosException{
         if(cbOrigenes.getValue()!=null && cbDestinos.getValue()!=null && dpSalida.getValue()!=null && dpRegreso.getValue()!=null){
             FXMLLoader fl = new FXMLLoader(Main.class.getResource("ReservaVuelo1.fxml"));

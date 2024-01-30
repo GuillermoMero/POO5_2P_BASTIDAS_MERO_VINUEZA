@@ -32,6 +32,12 @@ public class BienvenidosController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    /**
+     * Método llamado automáticamente al cargar la vista.
+     * Inicializa la imagen de bienvenida desde un archivo y realiza otras acciones necesarias.
+     * @param url URL no utilizada.
+     * @param rb ResourceBundle no utilizado.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try(FileInputStream input = new FileInputStream("src/main/resources/images/imgBienvenido.png")){
@@ -67,7 +73,11 @@ public class BienvenidosController implements Initializable {
         }
         txtNombre.setText(nombre);
     }
-    
+    /**
+     * Método que configura el mensaje de bienvenida y el nombre en la vista.
+     * @param genero Género del usuario ("M" para masculino, "F" para femenino).
+     * @param nombre Nombre del usuario.
+     */
     @FXML
     void mostrarPromociones(ActionEvent e){
         Stage s = new Stage();
@@ -83,6 +93,12 @@ public class BienvenidosController implements Initializable {
         s.setScene(scene);
         s.show();
     }
+    
+    /**
+     * Método que se llama cuando se hace clic en el botón de mostrar promociones.
+     * Abre una nueva ventana para mostrar el mapa de promociones.
+     * @param e Evento de acción generado por el clic del botón.
+     */
     
     @FXML
     void mostrarReservaVuelo(ActionEvent e){
