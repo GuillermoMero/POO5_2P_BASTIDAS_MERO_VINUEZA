@@ -5,10 +5,13 @@
 package modelo;
 
 import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -131,84 +134,83 @@ public class Reserva  implements Serializable, Pagable{
         this.codigo = codigo;
     }
     
-    public void escribirReserva(String nombreArchivo, Reserva reserva){
-        FileWriter f = null;
-        BufferedWriter bw = null;
-
-        try {
-            f = new FileWriter("Reservas.txt", true);
-            bw = new BufferedWriter(f);
+    private void escribirReserva(String nombreArchivo, Reserva reserva) {
+        try (FileWriter fw = new FileWriter(nombreArchivo, true);
+             BufferedWriter bw = new BufferedWriter(fw)) {
 
             String linea = construirLineaReserva(reserva);
-
             bw.write(linea);
-            bw.newLine(); 
+            bw.newLine();
 
             System.out.println("Reserva guardada en el archivo.");
 
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (bw != null) {
-                    bw.close();
-                }
-                if (f != null) {
-                    f.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
     
     private static String construirLineaReserva(Reserva reserva) {
-        // Construir la línea con la información de la reserva
-        return String.format("%s;%s;%s;%s;%s;%d;%s;%s;%f;%f;%s",
-                reserva.getCodigo(),
-                reserva.getCliente(),
-                reserva.getCiudadOrigen(),
-                reserva.getCiudadDestino(),
-                reserva.getFechaSalida(),
-                reserva.getFechaRegreso(),
-                reserva.getNumeroPasajeros(),
-                reserva.getNumida(),
-                reserva.getNumRegreso(),
-                reserva.getTarifaIda(),
-                reserva.getTarifaRegreso());
+        return reserva.getCodigo() + ";" +
+           reserva.getCliente() + ";" +
+           reserva.getCiudadOrigen() + ";" +
+           reserva.getCiudadDestino() + ";" +
+           reserva.getFechaSalida() + ";" +
+           reserva.getFechaRegreso() + ";" +
+           reserva.getNumeroPasajeros() + ";" +
+           reserva.getNumida() + ";" +
+           reserva.getNumRegreso() + ";" +
+           reserva.getTarifaIda() + ";" +
+           reserva.getTarifaRegreso();
     }
     
+    
+     private double obtenerDescuento(List<Tarifa> tarifas) {
+        double descuento = 0.0;
+
+        for (Tarifa tarifa : tarifas) {
+            if (tarifa.getTipo().equals("Descuento") && tarifa.getCaracteristicas().contains(ciudadDestino)) {
+                descuento = tarifa.getPorcentaje() / 100.0;
+                break;
+            }
+        }
+
+        return descuento * (tarifaIda.getPorcentaje() + tarifaRegreso.getPorcentaje());
+    }
+     
+     
+     private int generarIdPago() {
+        
+        return new Random().nextInt(1000);
+    }
+     
+      private void serializarReserva(Reserva reserva) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream(reserva.getCodigo() + ".bin"))) {
+
+            oos.writeObject(reserva);
+            System.out.println("Reserva serializada correctamente.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
-    public Pago generarTransaccion(List<Promocion> promociones) {
-        double totalReserva = tarifaIda.getPrecio() + tarifaRegreso.getPrecio();
-        double descuento = obtenerDescuento(promociones);
-        String formaPago = "Tarjeta de crédito"; // Ejemplo, ajusta según tu lógica
+    public Pago generarTransaccion() {
+        double totalReserva = tarifaIda.getPorcentaje()+ tarifaRegreso.getPorcentaje();
+        double descuento = obtenerDescuento(tarifas);
+        String formaPago = "Tarjeta de crédito"; 
         double totalPagar = totalReserva - descuento;
 
         Pago pago = new Pago(generarIdPago(), codigo, totalReserva, descuento, formaPago, totalPagar);
 
-        // Guarda la reserva en el archivo reservas.txt
-        escribirReserva("Reservas.txt");
+        escribirReserva("Reservas.txt", this);
 
-        // Serializa la reserva en un archivo binario con el nombre del código de la reserva
         serializarReserva(this);
 
         return pago;
     }
-    
-     private double obtenerDescuento(List<Promocion> promociones) {
-       
-        double descuento = 0.0;
 
-        for (Promocion promocio : promociones) {
-            if (promocio.(this.ciudadDestino)) {
-                descuento = promocion.getDescuento();
-                break; // Aplicamos el descuento de la primera promoción que cumple con los criterios
-            }
-        }
-
-        return descuento * (tarifaIda + tarifaRegreso);
-    }
     
 
     }
