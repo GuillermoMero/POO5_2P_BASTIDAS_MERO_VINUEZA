@@ -4,6 +4,7 @@
  */
 package com.mycompany.proyecto2p_grupo2;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -22,6 +23,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import modelo.DatosNoIngresadosException;
 import modelo.Destino;
@@ -39,6 +42,13 @@ public class ReservaVueloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        try(FileInputStream input = new FileInputStream("src/main/resources/images/Avion.png")){
+            Image i = new Image(input,94,116,false,false);
+            imgAvi.setImage(i);
+        }catch(IOException e){
+            System.out.println("No se encuentra el archivo");
+        }
+      
         try{
             cargarOrigenes();
             cargarDestino();
@@ -70,6 +80,9 @@ public class ReservaVueloController implements Initializable {
     
     @FXML
     private Label lblAviso;
+    
+    @FXML
+    private ImageView imgAvi;
     
     /**
      * Carga los datos de los origenes en el ComboBox.
