@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservaDatosPersonalesController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservaDatosPersonalesController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="873.0" prefWidth="579.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="962.0" prefWidth="583.0" style="-fx-background-color: white;">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="875.0" prefWidth="581.0" spacing="30.0">
+            <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="963.0" prefWidth="581.0" spacing="30.0">
                <children>
                   <Label text="Datos Personales" textFill="#7b6458">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <VBox fx:id="seccionDatos" prefHeight="779.0" prefWidth="541.0" spacing="20.0">
+                  <VBox fx:id="seccionDatos" alignment="TOP_RIGHT" prefHeight="779.0" prefWidth="541.0" spacing="20.0">
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </VBox.margin>

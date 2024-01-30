@@ -43,7 +43,9 @@ public class ReservaVueloController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         try(FileInputStream input = new FileInputStream("src/main/resources/images/Avion.png")){
-            Image i = new Image(input,94,116,false,false);
+            Image i = new Image(input);
+            imgAvi.setFitWidth(94);
+            imgAvi.setFitHeight(116);
             imgAvi.setImage(i);
         }catch(IOException e){
             System.out.println("No se encuentra el archivo");
@@ -111,7 +113,7 @@ public class ReservaVueloController implements Initializable {
      */
     
     public void cargarSpinner(){
-        SpinnerValueFactory<Integer> valores = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, 1);
+        SpinnerValueFactory<Integer> valores = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1);
         spCantidades.setValueFactory(valores);
     }
     
@@ -157,6 +159,7 @@ public class ReservaVueloController implements Initializable {
             ReservaDatosPersonalesController.numPasajeros = spCantidades.getValue();
             ReservaVuelo1Controller rc1 = fl.getController();
             rc1.cargarTitulo();
+            PagoAController.destino = cbDestinos.getValue();
             ReservaVuelo1Controller.origenSeleccionado = cbOrigenes.getValue();
             ReservaVuelo1Controller.destinoSeleccionado = String.valueOf(cbDestinos.getValue());
             ReservaVuelo3Controller.origenSeleccionado = String.valueOf(cbDestinos.getValue());
