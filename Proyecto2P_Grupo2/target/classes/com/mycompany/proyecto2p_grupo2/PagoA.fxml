@@ -10,71 +10,93 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="364.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.PagoAController">
+<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.PagoAController">
    <children>
-      <HBox alignment="CENTER" layoutY="1.0" prefHeight="58.0" prefWidth="366.0">
+      <VBox alignment="TOP_CENTER" prefHeight="499.0" prefWidth="449.0" spacing="20.0" style="-fx-background-color: white;">
          <children>
-            <Label text="Pago" textFill="#695247">
+            <Label text="Pago" textFill="#7b6458">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
+            <HBox prefHeight="34.0" prefWidth="356.0">
+               <children>
+                  <Label text="Selecciona tu método de pago:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox prefHeight="55.0" prefWidth="399.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="rbCredito" mnemonicParsing="false" text="Tarjeta de Crédito" />
+                  <RadioButton fx:id="rbEfectivo" mnemonicParsing="false" text="Efectivo" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="40.0" right="20.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="seccionMetodo" alignment="CENTER" prefHeight="94.0" prefWidth="399.0">
+               <children>
+                  <Label prefHeight="52.0" prefWidth="391.0" text="Estimado cliente, tiene 24 horas para acercarse a reazlizar el pago. de lo contrario, la reserva se anulará." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="399.0" spacing="20.0">
+               <children>
+                  <Label text="Código Promocional:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCodigo" />
+                  <Label fx:id="lblInvalido" />
+               </children>
+            </HBox>
+            <VBox fx:id="seccionLabels" alignment="TOP_RIGHT" prefHeight="77.0" prefWidth="399.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lblPrecio" text="Label">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Label">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Label">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="399.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #7B6458; -fx-border-color: White; -fx-border-radius: 5; -fx-border-width: 3; -fx-background-radius: 8;" text="Pagar" textFill="#fffbfb">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="89.0" style="-fx-background-color: #7B6458; -fx-border-color: White; -fx-border-radius: 5; -fx-border-width: 3; -fx-background-radius: 8;" text="Cancelar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox layoutX="5.0" layoutY="70.0" prefHeight="34.0" prefWidth="356.0">
-         <children>
-            <Label text="Selecciona tu método de pago:">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <VBox layoutY="115.0" prefHeight="67.0" prefWidth="366.0" spacing="10.0">
-         <children>
-            <RadioButton mnemonicParsing="false" text="Tarjeta de Crédito" />
-            <RadioButton mnemonicParsing="false" text="Efectivo" />
-         </children>
-         <opaqueInsets>
-            <Insets bottom="40.0" right="20.0" />
-         </opaqueInsets>
          <padding>
-            <Insets left="10.0" />
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </padding>
       </VBox>
-      <HBox layoutX="5.0" layoutY="190.0" prefHeight="38.0" prefWidth="356.0" spacing="20.0">
-         <children>
-            <Label text="Código Promocional:">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField />
-         </children>
-      </HBox>
-      <HBox alignment="TOP_RIGHT" layoutX="8.0" layoutY="237.0" prefHeight="46.0" prefWidth="350.0">
-         <children>
-            <Label prefHeight="18.0" prefWidth="36.0" text="Label">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="5.0" layoutY="284.0" prefHeight="100.0" prefWidth="356.0" spacing="20.0">
-         <children>
-            <Button mnemonicParsing="false" style="-fx-background-color: #7B6458;" text="Pagar" textFill="#fffbfb">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: #7B6458;" text="Cancelar" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
    </children>
 </AnchorPane>

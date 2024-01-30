@@ -6,6 +6,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -14,13 +15,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="325.0" prefWidth="636.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservaVueloController">
+<AnchorPane id="AnchorPane" prefHeight="379.0" prefWidth="639.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ReservaVueloController">
    <children>
-      <VBox alignment="BOTTOM_CENTER" layoutX="5.0" layoutY="10.0" prefHeight="358.0" prefWidth="636.0" spacing="20.0">
+      <VBox alignment="BOTTOM_CENTER" layoutX="3.0" layoutY="12.0" prefHeight="284.0" prefWidth="636.0" spacing="20.0">
          <children>
             <Label text="Reserva" textFill="#7b6458">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
             <GridPane hgap="15.0" prefHeight="75.0" prefWidth="529.0" vgap="15.0">
@@ -64,11 +65,6 @@
                </padding>
             </VBox>
             <Label fx:id="lblAviso" />
-            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscar" prefHeight="28.0" prefWidth="117.0" style="-fx-background-color: #7B6458; -fx-border-radius: 5; -fx-border-color: White; -fx-border-width: 3; -fx-background-radius: 8;" text="Buscar" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
          </children>
          <opaqueInsets>
             <Insets />
@@ -77,5 +73,20 @@
             <Insets bottom="45.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
+      <HBox alignment="CENTER" layoutX="244.0" layoutY="283.0" prefHeight="54.0" prefWidth="150.0" spacing="80.0">
+         <children>
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscar" prefHeight="28.0" prefWidth="117.0" style="-fx-background-color: #7B6458; -fx-border-radius: 5; -fx-border-color: White; -fx-border-width: 3; -fx-background-radius: 8;" text="Buscar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="503.0" layoutY="228.0" prefHeight="134.0" prefWidth="133.0">
+         <children>
+            <ImageView fx:id="imgAvi" fitHeight="144.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <HBox layoutX="-7.0" layoutY="352.0" prefHeight="36.0" prefWidth="650.0" style="-fx-background-color: #7B6760;" />
    </children>
 </AnchorPane>

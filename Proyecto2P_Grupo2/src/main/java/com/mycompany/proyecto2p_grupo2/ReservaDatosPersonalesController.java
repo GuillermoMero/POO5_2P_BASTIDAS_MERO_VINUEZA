@@ -147,7 +147,7 @@ public class ReservaDatosPersonalesController implements Initializable {
         lblApellido.setText("Apellido:");
         lblApellido.setAlignment(Pos.CENTER_LEFT);
         Label lblPasaporte = new Label();
-        lblPasaporte.setText("Pasajarte:");
+        lblPasaporte.setText("Pasaporte:");
         lblPasaporte.setAlignment(Pos.CENTER_LEFT);
         Label lblCorreo = new Label();
         lblCorreo.setText("Correo:");
