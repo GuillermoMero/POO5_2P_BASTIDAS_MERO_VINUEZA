@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="478.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.ConfirmacionCompraController">
+   <children>
+      <HBox alignment="CENTER" layoutY="14.0" prefHeight="74.0" prefWidth="493.0">
+         <children>
+            <Label text="Confirmación Compra" textFill="#7b6458">
+               <font>
+                  <Font name="Arial Black" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="79.0" prefHeight="54.0" prefWidth="494.0">
+         <children>
+            <Label text="¡Su compra se ha realizado con éxito!">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="-1.0" layoutY="133.0" prefHeight="54.0" prefWidth="494.0">
+         <children>
+            <Label fx:id="lblVuelo" text="Label" textFill="#7b6458">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" layoutX="-1.0" layoutY="268.0" prefHeight="38.0" prefWidth="474.0">
+         <children>
+            <Label fx:id="lblTiempo" text="Label" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="198.0" layoutY="296.0" prefHeight="54.0" prefWidth="96.0">
+         <children>
+            <Button fx:id="btnAceptar" mnemonicParsing="false" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #7b6458;" text="Aceptar" textFill="#fffdfd">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="2.0" layoutY="187.0" prefHeight="65.0" prefWidth="494.0" spacing="10.0">
+         <children>
+            <Label text="Se ha enviado un mail con los datos de la reserva." />
+            <Label text="No olvides hacer check in 24 horas antes de tu vuelo." />
+         </children>
+      </VBox>
+      <ImageView fx:id="imgAv" fitHeight="135.0" fitWidth="138.0" layoutX="47.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

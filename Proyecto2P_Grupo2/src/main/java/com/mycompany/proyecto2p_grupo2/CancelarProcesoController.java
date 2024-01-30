@@ -6,16 +6,14 @@ package com.mycompany.proyecto2p_grupo2;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author Paula
  */
-public class PagoAController implements Initializable {
+public class CancelarProcesoController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -23,6 +21,6 @@ public class PagoAController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
     }    
+    
 }

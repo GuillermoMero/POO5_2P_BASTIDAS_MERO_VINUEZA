@@ -282,17 +282,13 @@ public class ReservaVuelo5Controller implements Initializable {
         }
     }
     
-<<<<<<< HEAD
     /**
      * Muestra los detalles del vuelo cuando se hace clic en el botón "Detalles del vuelo".
      * @param v Objeto Vuelo asociado al botón.
      * @param btn Botón que activa la acción.
      */
     
-    public void mostrarDetallesVuelo(Vuelo v, Button btn){
-=======
     public void mostrarDetallesVueloIda(Vuelo v, Button btn){
->>>>>>> 5c8c00da033c85dd89f60012df78ed36ac2c8ff3
         btn.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e){
