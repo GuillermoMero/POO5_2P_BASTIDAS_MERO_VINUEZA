@@ -11,6 +11,10 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$5.class
 com\mycompany\proyecto2p_grupo2\ReservaVueloController.class
 modelo\Destino.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$2.class
+<<<<<<< HEAD
+=======
+com\mycompany\proyecto2p_grupo2\PagoAController$6.class
+>>>>>>> 76cd4358293789b8caa8c362f9125f1c22ec9c12
 com\mycompany\proyecto2p_grupo2\CancelarProcesoController.class
 com\mycompany\proyecto2p_grupo2\DetallesPromocionController$2.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$5.class
@@ -18,6 +22,10 @@ com\mycompany\proyecto2p_grupo2\PagoAController$3.class
 modelo\Reserva.class
 com\mycompany\proyecto2p_grupo2\ReservasCreadasController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$2.class
+<<<<<<< HEAD
+=======
+com\mycompany\proyecto2p_grupo2\PagoAController$5.class
+>>>>>>> 76cd4358293789b8caa8c362f9125f1c22ec9c12
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$4.class
 module-info.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$3.class
@@ -36,6 +44,10 @@ modelo\Pago.class
 modelo\Pagable.class
 com\mycompany\proyecto2p_grupo2\PagoAController.class
 com\mycompany\proyecto2p_grupo2\InicioController.class
+<<<<<<< HEAD
+=======
+com\mycompany\proyecto2p_grupo2\PagoAController$7.class
+>>>>>>> 76cd4358293789b8caa8c362f9125f1c22ec9c12
 com\mycompany\proyecto2p_grupo2\ReservaVuelo1Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$3.class
 com\mycompany\proyecto2p_grupo2\App.class
@@ -69,6 +81,10 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$4.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$7.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$1.class
+<<<<<<< HEAD
+=======
+com\mycompany\proyecto2p_grupo2\PagoAController$8.class
+>>>>>>> 76cd4358293789b8caa8c362f9125f1c22ec9c12
 modelo\Cliente.class
 com\mycompany\proyecto2p_grupo2\BienvenidosController.class
 com\mycompany\proyecto2p_grupo2\DetallesPromocionController.class
