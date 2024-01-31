@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="478.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mycompany.proyecto2p_grupo2.ConfirmacionCompraController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.ConfirmacionCompraController">
    <children>
       <HBox alignment="CENTER" layoutY="14.0" prefHeight="74.0" prefWidth="493.0">
          <children>
@@ -45,9 +44,9 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="198.0" layoutY="296.0" prefHeight="54.0" prefWidth="96.0">
          <children>
-            <Button fx:id="btnAceptar" mnemonicParsing="false" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #7b6458;" text="Aceptar" textFill="#fffdfd">
+            <Button fx:id="btnAceptar" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #7b6458; -fx-border-color: White; -fx-border-width: 3; -fx-background-radius: 8; -fx-border-radius: 5;" text="Aceptar" textFill="#fffdfd">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="13.0" />
                </font>
             </Button>
          </children>

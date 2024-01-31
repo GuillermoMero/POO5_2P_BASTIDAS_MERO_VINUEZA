@@ -29,6 +29,11 @@ public class DetallesVueloIdaController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    /**
+     * Inicializa el controlador.
+     * @param url La ubicación para resolver rutas relativas de recursos.
+     * @param rb Los recursos para la internacionalización.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -59,11 +64,20 @@ public class DetallesVueloIdaController implements Initializable {
     @FXML
     private Button btnCerrar;
     
+    /**
+     * Carga las etiquetas con la información del vuelo y la tarifa.
+     */
+    
     public void cargarLabels(){
         lblNumVuelo.setText("Vuelo: "+vuelo.getNumVuelo());
         lblCodigo.setText(vuelo.getCodigoAvion());
         lblTarifa.setText("Tarifa "+tarifa.getTipo());
     }
+    
+    /**
+     * Maneja el evento de cerrar la ventana.
+     * @param e Evento de acción.
+     */
     
     @FXML
     void cerrar(ActionEvent e){

@@ -196,6 +196,10 @@ public class PagoAController implements Initializable {
         });
     }
     
+    /**
+ * Método para verificar la selección del radio button "Credito" y mostrar el formulario de tarjeta de crédito.
+ */
+    
     public void verificarRadioCredito(){
         rbCredito.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -206,6 +210,10 @@ public class PagoAController implements Initializable {
             }
         });
     }
+    
+    /**
+ * Método para mostrar un mensaje en la interfaz de usuario.
+ */
     
     public void mostrarMensaje(){
         Platform.runLater(()->{
@@ -218,6 +226,10 @@ public class PagoAController implements Initializable {
         seccionMetodo.getChildren().add(lblMensaje);
         });
     }
+    
+    /**
+ * Método para mostrar el formulario de tarjeta de crédito en la interfaz de usuario.
+ */
     
     public void mostrarFormularioTC(){
         Platform.runLater(()->{
@@ -280,6 +292,11 @@ public class PagoAController implements Initializable {
         });
     }
     
+    /**
+ * Método para mostrar el descuento de una promoción en el total a pagar.
+ * @param p La promoción aplicada.
+ */
+    
     public void mostrarDescuentoPromo(Promocion p){
         Platform.runLater(new Runnable(){
             @Override
@@ -290,10 +307,19 @@ public class PagoAController implements Initializable {
         });
     }
     
+    /**
+ * Método para mostrar el resumen de la compra y el total a pagar en la interfaz de usuario.
+ */
+    
     public void mostrarPrecioTotal(){
         lblPrecio.setText("Resumen de compra: "+String.format("%.2f", totalPrecio));
         lblTotal.setText("Total a pagar: "+String.format("%.2f", totalPrecio));
     }
+    
+    /**
+ * Método para manejar el evento de clic en el botón "Pagar" y realizar acciones dependiendo del método de pago seleccionado.
+ * @param gp El GridPane que contiene el formulario de pago.
+ */
     
     public void pagar(GridPane gp){
         btnPagar.setOnAction(new EventHandler<ActionEvent>(){
@@ -308,6 +334,11 @@ public class PagoAController implements Initializable {
             }
         });
     }
+    
+    /**
+ * Método para ejecutar el pago, generalmente llamado cuando se confirma la compra.
+ * @param gp El GridPane que contiene el formulario de pago.
+ */
     
     public void ejecutarPago(GridPane gp){
         Thread t = new Thread(new Runnable(){
@@ -327,11 +358,20 @@ public class PagoAController implements Initializable {
         t.start();
     }
     
+    /**
+ * Método para verificar que el formulario de tarjeta de crédito esté completo antes de realizar el pago.
+ * @throws DatosIncompletosException Se lanza si algún dato del formulario está incompleto.
+ */
+    
     public void verificarFormularioTC()throws DatosIncompletosException{
         if(txtNumTC.getText().isEmpty() ||  dpExpiracion.getValue()==null || pwCVV.getText().isEmpty()){
             throw new DatosIncompletosException("Datos incompletos");
         }
     }
+    
+    /**
+ * Método para mostrar la confirmación de la compra en una nueva ventana.
+ */
     
     public void mostrarConfirmacionCompra(){
         Stage s = (Stage) btnPagar.getScene().getWindow();
