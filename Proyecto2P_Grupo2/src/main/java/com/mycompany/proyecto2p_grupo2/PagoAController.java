@@ -318,16 +318,16 @@ public class PagoAController implements Initializable {
         lblTotal.setText("Total a pagar: "+String.format("%.2f", totalPrecio));
     }
     
-<<<<<<< HEAD
+
     /**
  * Método para manejar el evento de clic en el botón "Pagar" y realizar acciones dependiendo del método de pago seleccionado.
  * @param gp El GridPane que contiene el formulario de pago.
  */
     
-    public void pagar(GridPane gp){
-=======
+    
+
     public void pagar(){
->>>>>>> 733648a607662557f40bf00fec5a6e0b8f0daa33
+
         btnPagar.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e){
@@ -340,16 +340,13 @@ public class PagoAController implements Initializable {
         });
     }
     
-<<<<<<< HEAD
+
     /**
  * Método para ejecutar el pago, generalmente llamado cuando se confirma la compra.
  * @param gp El GridPane que contiene el formulario de pago.
  */
-    
-    public void ejecutarPago(GridPane gp){
-=======
     public void ejecutarPago(){
->>>>>>> 733648a607662557f40bf00fec5a6e0b8f0daa33
+
         Thread t = new Thread(new Runnable(){
             @Override
             public void run(){
@@ -397,6 +394,12 @@ public class PagoAController implements Initializable {
         s.setScene(ventanaConfirmacion);
         s.show();
     }
+    
+    /**
+     * Maneja el evento de clic en el botón para cancelar un proceso.
+     * Abre una nueva ventana para confirmar la cancelación.
+     * @param e Evento de acción.
+     */
     
     @FXML
     void cancelar(ActionEvent e){
