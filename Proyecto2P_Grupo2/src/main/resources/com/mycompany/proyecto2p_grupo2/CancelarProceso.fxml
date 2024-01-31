@@ -24,7 +24,11 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="5.0" layoutY="148.0" prefHeight="73.0" prefWidth="474.0" spacing="20.0">
          <children>
+<<<<<<< HEAD
             <Button fx:id="btnSi" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: #7B6458; -fx-border-width: 3; -fx-border-radius: 5; -fx-border-color: white; -fx-background-radius: 8;" text="Si" textFill="#faf7f7">
+=======
+            <Button fx:id="btnSi" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #7B6458;" text="Si" textFill="#faf7f7">
+>>>>>>> 733648a607662557f40bf00fec5a6e0b8f0daa33
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

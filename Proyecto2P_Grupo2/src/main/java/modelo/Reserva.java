@@ -216,10 +216,13 @@ public class Reserva  implements Serializable, Pagable{
         escribirReserva("Reservas.txt", this);
 
         serializarReserva(this);
-
-<<<<<<< HEAD
         return pago;
+<<<<<<< HEAD
     }*/
+=======
+        return null;
+    }***/
+>>>>>>> 733648a607662557f40bf00fec5a6e0b8f0daa33
 
 
     }

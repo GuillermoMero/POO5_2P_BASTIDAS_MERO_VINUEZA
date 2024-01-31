@@ -67,6 +67,7 @@ public class PagoAController implements Initializable {
     public TextField txtNumTC;
     public DatePicker dpExpiracion;
     public PasswordField pwCVV;
+    public GridPane gpCredito;
     
     @FXML
     private VBox seccionMetodo;
@@ -217,13 +218,14 @@ public class PagoAController implements Initializable {
     
     public void mostrarMensaje(){
         Platform.runLater(()->{
-        seccionMetodo.setPrefWidth(399);
-        seccionMetodo.setPrefHeight(94);
-        Label lblMensaje = new Label();
-        lblMensaje.setText("Estimado cliente, tiene 24 horas para acercarse a realizar el pago de lo contrario, la reserva se anulará.");
-        lblMensaje.setWrapText(true);
-        lblMensaje.setStyle("-fx-font-weight: bold;");
-        seccionMetodo.getChildren().add(lblMensaje);
+            seccionMetodo.setPrefWidth(399);
+            seccionMetodo.setPrefHeight(94);
+            Label lblMensaje = new Label();
+            lblMensaje.setText("Estimado cliente, tiene 24 horas para acercarse a realizar el pago de lo contrario, la reserva se anulará.");
+            lblMensaje.setWrapText(true);
+            lblMensaje.setStyle("-fx-font-weight: bold;");
+            seccionMetodo.getChildren().add(lblMensaje);
+            pagar();
         });
     }
     
@@ -239,7 +241,7 @@ public class PagoAController implements Initializable {
             seccionMetodo.setSpacing(10);
             Label lblInformacion = new Label();
             lblInformacion.setText("Informacion de la Tarjeta");
-            GridPane gpCredito = new GridPane();
+            gpCredito = new GridPane();
             gpCredito.setStyle("-fx-border-color:#7b6458;");
             gpCredito.setPadding(new Insets(20,10,20,10));
             gpCredito.setVgap(20);
@@ -288,7 +290,7 @@ public class PagoAController implements Initializable {
             gpCredito.add(dpExpiracion, 1, 1);
             gpCredito.add(pwCVV, 1, 2);
             seccionMetodo.getChildren().addAll(lblInformacion, gpCredito);
-            pagar(gpCredito);
+            pagar();
         });
     }
     
@@ -316,41 +318,49 @@ public class PagoAController implements Initializable {
         lblTotal.setText("Total a pagar: "+String.format("%.2f", totalPrecio));
     }
     
+<<<<<<< HEAD
     /**
  * Método para manejar el evento de clic en el botón "Pagar" y realizar acciones dependiendo del método de pago seleccionado.
  * @param gp El GridPane que contiene el formulario de pago.
  */
     
     public void pagar(GridPane gp){
+=======
+    public void pagar(){
+>>>>>>> 733648a607662557f40bf00fec5a6e0b8f0daa33
         btnPagar.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e){
-                if(rbCredito.isSelected()){
-                    ejecutarPago(gp);
-                    mostrarConfirmacionCompra();
-                }else{
+                if(rbCredito.isSelected() && (verificarCodigo()|| txtCodigo.getText().isEmpty())){
+                    ejecutarPago();
+                }else if(verificarCodigo()|| txtCodigo.getText().isEmpty()){
                     mostrarConfirmacionCompra();
                 }
             }
         });
     }
     
+<<<<<<< HEAD
     /**
  * Método para ejecutar el pago, generalmente llamado cuando se confirma la compra.
  * @param gp El GridPane que contiene el formulario de pago.
  */
     
     public void ejecutarPago(GridPane gp){
+=======
+    public void ejecutarPago(){
+>>>>>>> 733648a607662557f40bf00fec5a6e0b8f0daa33
         Thread t = new Thread(new Runnable(){
             @Override
             public void run(){
                 try{
                     verificarFormularioTC();
+                    Platform.runLater(()->mostrarConfirmacionCompra());
                 }catch(DatosIncompletosException d){
                     System.out.println(d.getMessage());
                     Platform.runLater(() ->{
                         Label lblAviso = new Label("Complete");
-                        gp.add(lblAviso, 2, 1); 
+                        gpCredito.add(lblAviso, 2, 1); 
                     });
                 }
             }
@@ -385,6 +395,22 @@ public class PagoAController implements Initializable {
         Scene ventanaConfirmacion = new Scene(rootConfirmacionCompra);
         s.setTitle("Confirmacion Compra");
         s.setScene(ventanaConfirmacion);
+        s.show();
+    }
+    
+    @FXML
+    void cancelar(ActionEvent e){
+        Stage s = new Stage();
+        FXMLLoader fl = new FXMLLoader(Main.class.getResource("CancelarProceso.fxml"));
+        Parent rootCancelar = null;
+        try{
+            rootCancelar = fl.load();
+        }catch(IOException i){
+            
+        }
+        Scene ventanaCancelar = new Scene(rootCancelar);
+        s.setTitle("Cancelar Proceso");
+        s.setScene(ventanaCancelar);
         s.show();
     }
 }
