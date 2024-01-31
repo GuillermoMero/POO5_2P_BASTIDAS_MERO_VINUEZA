@@ -48,7 +48,7 @@ public class MapaPromocionesController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try(FileInputStream input = new FileInputStream("src/main/resources/images/mapa.png")){
+        try(FileInputStream input = new FileInputStream("images/mapa.png")){
             Image i = new Image(input);
             imgMapa.setImage(i);
         }catch(IOException e){

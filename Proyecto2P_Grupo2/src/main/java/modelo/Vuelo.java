@@ -142,14 +142,12 @@ public class Vuelo implements Comparable<Vuelo>{
         //ReservaVuelo1Controller rc1 = fl.getController();
         //String tipoOrden = ReservaVuelo1Controller.cbOrden.getValue();
         if(tipoOrden.equals("Precio")){
-            System.out.println("Odenando por: "+tipoOrden);
             if(this.precio < v.precio){
                 return -1;
             }else if(this.precio > v.precio){
                 return 1;
             }
         }else if(tipoOrden.equals("Duración")){
-            System.out.println("Odenando por: "+tipoOrden);
             if(this.duracion < v.duracion){
                 return -1;
             }else if(this.duracion > v.duracion){

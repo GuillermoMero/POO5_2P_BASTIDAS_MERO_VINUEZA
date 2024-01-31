@@ -40,7 +40,7 @@ public class BienvenidosController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try(FileInputStream input = new FileInputStream("src/main/resources/images/imgBienvenido.png")){
+        try(FileInputStream input = new FileInputStream("images/imgBienvenido.png")){
             Image i = new Image(input,614,402,false,false);
             imgBienvenido.setImage(i);
         }catch(IOException e){

@@ -1,0 +1,13 @@
+Cali,Colombia
+México,México
+Nueva York,Estados Unidos
+Shanghái,China
+Canberra,Australia
+Buenos Aires,Argentina
+Ankara,Turquía
+París,Francia
+Barcelona,España
+Roma,Italia
+Lima,Perú
+Ankara,Nigeria
+El Cairo,Egipto

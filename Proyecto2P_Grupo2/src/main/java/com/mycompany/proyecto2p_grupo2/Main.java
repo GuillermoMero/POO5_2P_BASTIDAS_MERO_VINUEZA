@@ -16,8 +16,8 @@ import javafx.stage.Stage;
  * @author LENOVO
  */
 public class Main extends Application{
-    public static String pathFiles = "src/main/resources/files/";
-    public static String pathImages = "src/main/resources/images/";
+    public static String pathFiles = "files/";
+    public static String pathImages = "images/";
     private static Scene scene;
     
     @Override

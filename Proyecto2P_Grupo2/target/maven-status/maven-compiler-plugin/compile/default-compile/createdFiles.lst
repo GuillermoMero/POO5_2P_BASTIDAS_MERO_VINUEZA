@@ -65,6 +65,7 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$1.class
 com\mycompany\proyecto2p_grupo2\PagoAController$1.class
 modelo\Vuelo.class
 com\mycompany\proyecto2p_grupo2\DetallesVueloIdaController.class
+com\mycompany\proyecto2p_grupo2\Starter.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$2.class
 com\mycompany\proyecto2p_grupo2\SpanishDateConverter.class
 com\mycompany\proyecto2p_grupo2\ConfirmacionCompraController$2.class

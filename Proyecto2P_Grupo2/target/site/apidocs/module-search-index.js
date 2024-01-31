@@ -1,1 +1,0 @@
-moduleSearchIndex = [{"l":"com.mycompany.proyecto2p_grupo2"}];updateSearchResults();

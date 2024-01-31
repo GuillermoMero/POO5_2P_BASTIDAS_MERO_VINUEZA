@@ -48,7 +48,7 @@ public class InicioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        try(FileInputStream input = new FileInputStream("src/main/resources/images/img1.png")){
+        try(FileInputStream input = new FileInputStream("images/img1.png")){
             Image i = new Image(input,578,369,false,false);
             imgView.setImage(i);
         }catch(IOException e){

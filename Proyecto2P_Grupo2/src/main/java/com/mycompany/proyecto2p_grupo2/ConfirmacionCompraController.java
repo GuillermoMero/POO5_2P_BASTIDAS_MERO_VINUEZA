@@ -44,7 +44,7 @@ public class ConfirmacionCompraController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-         try(FileInputStream input = new FileInputStream("src/main/resources/images/Av.png")){
+         try(FileInputStream input = new FileInputStream("images/Av.png")){
             Image i = new Image(input,360,360,false,false);
             imgAv.setImage(i);
         }catch(IOException e){

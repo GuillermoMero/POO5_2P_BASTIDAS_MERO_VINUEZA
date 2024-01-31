@@ -103,6 +103,7 @@ public class ReservaVuelo1Controller implements Initializable {
                 ArrayList<Vuelo> vuelos = Vuelo.leerVuelos();
                 for(int i=0; i<vuelos.size(); i++){
                     Vuelo v = vuelos.get(i);
+                    try{
                     if(origenSeleccionado.equals(v.getOrigen()) && destinoSeleccionado.equals(v.getDestino())){
                         try{
                             Thread.sleep(1000);
@@ -111,6 +112,9 @@ public class ReservaVuelo1Controller implements Initializable {
                         }
                         System.out.println("Mostrando vuelo"+(i+1));
                         crearBorderPane(v);
+                    }
+                    }catch(NullPointerException ex){
+                            
                     }
                 }
                 if(seccionVuelos.getChildren().isEmpty()){

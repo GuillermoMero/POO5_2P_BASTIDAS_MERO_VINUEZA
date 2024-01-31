@@ -34,7 +34,7 @@ public class ReservasCreadasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        try(FileInputStream input = new FileInputStream("src/main/resources/images/Avion.png")){
+        try(FileInputStream input = new FileInputStream("images/Avion.png")){
             Image i = new Image(input,360,360,false,false);
             imgAvion.setImage(i);
         }catch(IOException e){

@@ -37,7 +37,7 @@ public class DetallesVueloIdaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        try(FileInputStream input = new FileInputStream("src/main/resources/images/Avi.png")){
+        try(FileInputStream input = new FileInputStream("images/Avi.png")){
             Image i = new Image(input,357,328,false,false);
             imgA.setImage(i);
         }catch(IOException e){
