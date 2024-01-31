@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.PagoAController">
+<AnchorPane id="AnchorPane" prefHeight="558.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2p_grupo2.PagoAController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="499.0" prefWidth="449.0" spacing="20.0" style="-fx-background-color: white;">
+      <VBox alignment="TOP_CENTER" prefHeight="550.0" prefWidth="449.0" spacing="20.0" style="-fx-background-color: white;">
          <children>
             <Label text="Pago" textFill="#7b6458">
                <font>
@@ -40,15 +40,7 @@
                   <Insets left="10.0" />
                </padding>
             </VBox>
-            <VBox fx:id="seccionMetodo" alignment="CENTER" prefHeight="94.0" prefWidth="399.0">
-               <children>
-                  <Label prefHeight="52.0" prefWidth="391.0" text="Estimado cliente, tiene 24 horas para acercarse a reazlizar el pago. de lo contrario, la reserva se anulará." textAlignment="JUSTIFY" wrapText="true">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
+            <VBox fx:id="seccionMetodo" prefHeight="0.0" prefWidth="399.0" spacing="10.0" />
             <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="399.0" spacing="20.0">
                <children>
                   <Label text="Código Promocional:">
@@ -67,26 +59,26 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="Label">
+                  <Label fx:id="lblDescuento" text="Descuento: 0%">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="Label">
+                  <Label fx:id="lblTotal" text="Label">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="399.0" spacing="20.0">
+            <HBox alignment="CENTER" prefHeight="33.0" prefWidth="399.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #7B6458; -fx-border-color: White; -fx-border-radius: 5; -fx-border-width: 3; -fx-background-radius: 8;" text="Pagar" textFill="#fffbfb">
+                  <Button fx:id="btnPagar" mnemonicParsing="false" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #7B6458; -fx-border-color: White; -fx-border-radius: 5; -fx-border-width: 3; -fx-background-radius: 8;" text="Pagar" textFill="#fffbfb">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="89.0" style="-fx-background-color: #7B6458; -fx-border-color: White; -fx-border-radius: 5; -fx-border-width: 3; -fx-background-radius: 8;" text="Cancelar" textFill="WHITE">
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" prefHeight="32.0" prefWidth="89.0" style="-fx-background-color: #7B6458; -fx-border-color: White; -fx-border-radius: 5; -fx-border-width: 3; -fx-background-radius: 8;" text="Cancelar" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

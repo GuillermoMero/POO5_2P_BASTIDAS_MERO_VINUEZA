@@ -197,10 +197,10 @@ public class Reserva  implements Serializable, Pagable{
 
     @Override
     public Pago generarTransaccion() {
-        double totalReserva = tarifaIda.getPorcentaje()+ tarifaRegreso.getPorcentaje();
-        double descuento = obtenerDescuento(tarifas);
+        /***double totalReserva = tarifaIda.getPorcentaje()+ tarifaRegreso.getPorcentaje();
+        //double descuento = obtenerDescuento(tarifas);
         String formaPago = "Tarjeta de crédito"; 
-        double totalPagar = totalReserva - descuento;
+        //double totalPagar = totalReserva - descuento;
 
         Pago pago = new Pago(generarIdPago(), codigo, totalReserva, descuento, formaPago, totalPagar);
 
@@ -208,7 +208,8 @@ public class Reserva  implements Serializable, Pagable{
 
         serializarReserva(this);
 
-        return pago;
+        return pago;***/
+        return null;
     }
 
     
