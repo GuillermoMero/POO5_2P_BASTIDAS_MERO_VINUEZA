@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -44,7 +45,7 @@ public class ReservasCreadasController implements Initializable {
     @FXML
     private ImageView imgAvion;
     @FXML
-    private ListView<String> listReservas;
+    private ListView<Reserva> listReservas;
     
     /**
      * Carga la lista de reservas con datos iniciales y programa una actualización periódica.
@@ -60,7 +61,8 @@ public class ReservasCreadasController implements Initializable {
                     }catch(InterruptedException e){
                         
                     }
-                    
+                    actualizarLista();
+                    System.out.println("Lista reserva creadas actulizada");
                 }
             }
         });
@@ -72,8 +74,10 @@ public class ReservasCreadasController implements Initializable {
      */
     
     public void actualizarLista(){
-        ArrayList<Reserva> reservas = Reserva.leerReservas();
-        listReservas.getItems().clear();
-        listReservas.getItems().addAll();
+        Platform.runLater(()->{
+           ArrayList<Reserva> reservas = Reserva.leerReservas();
+            listReservas.getItems().clear();
+            listReservas.getItems().setAll(reservas);
+        });
     }
 }
