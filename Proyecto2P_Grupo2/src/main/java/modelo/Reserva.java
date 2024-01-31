@@ -197,7 +197,6 @@ public class Reserva  implements Serializable, Pagable{
 
     @Override
     public Pago generarTransaccion() {
-<<<<<<< HEAD
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -217,15 +216,9 @@ public class Reserva  implements Serializable, Pagable{
         escribirReserva("Reservas.txt", this);
 
         serializarReserva(this);
-
-<<<<<<< HEAD
         return pago;
-    }*/
-=======
-        return pago;***/
         return null;
-    }
->>>>>>> 76cd4358293789b8caa8c362f9125f1c22ec9c12
+    }***/
 
     
 
