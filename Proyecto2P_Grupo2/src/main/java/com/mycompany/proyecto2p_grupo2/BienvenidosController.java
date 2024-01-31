@@ -65,6 +65,11 @@ public class BienvenidosController implements Initializable {
     @FXML
     ImageView imgBienvenido;
     
+    /**
+     * Método que configura el mensaje de bienvenida y el nombre en la vista.
+     * @param genero Género del usuario ("M" para masculino, "F" para femenino).
+     * @param nombre Nombre del usuario.
+     */
     public void darBienvenida(String genero, String nombre){
         if(genero.equals("M")){
             txtBienvenido.setText("Bienvenido");
@@ -74,10 +79,11 @@ public class BienvenidosController implements Initializable {
         txtNombre.setText(nombre);
     }
     /**
-     * Método que configura el mensaje de bienvenida y el nombre en la vista.
-     * @param genero Género del usuario ("M" para masculino, "F" para femenino).
-     * @param nombre Nombre del usuario.
+     * Método que se llama cuando se hace clic en el botón de mostrar promociones.
+     * Abre una nueva ventana para mostrar el mapa de promociones.
+     * @param e Evento de acción generado por el clic del botón.
      */
+    
     @FXML
     void mostrarPromociones(ActionEvent e){
         Stage s = new Stage();
@@ -95,8 +101,8 @@ public class BienvenidosController implements Initializable {
     }
     
     /**
-     * Método que se llama cuando se hace clic en el botón de mostrar promociones.
-     * Abre una nueva ventana para mostrar el mapa de promociones.
+     * Método que se llama cuando se hace clic en el botón de mostrar Reservar vuelo.
+     * Abre una nueva ventana para mostrar las reservas de vuelo.
      * @param e Evento de acción generado por el clic del botón.
      */
     

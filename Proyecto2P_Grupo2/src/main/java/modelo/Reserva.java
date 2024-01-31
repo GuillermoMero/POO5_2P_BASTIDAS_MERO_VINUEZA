@@ -197,6 +197,11 @@ public class Reserva  implements Serializable, Pagable{
 
     @Override
     public Pago generarTransaccion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    /**@Override
+    public Pago generarTransaccion() {
         double totalReserva = tarifaIda.getPorcentaje()+ tarifaRegreso.getPorcentaje();
         double descuento = obtenerDescuento(tarifas);
         String formaPago = "Tarjeta de crédito"; 
@@ -209,7 +214,7 @@ public class Reserva  implements Serializable, Pagable{
         serializarReserva(this);
 
         return pago;
-    }
+    }*/
 
     
 

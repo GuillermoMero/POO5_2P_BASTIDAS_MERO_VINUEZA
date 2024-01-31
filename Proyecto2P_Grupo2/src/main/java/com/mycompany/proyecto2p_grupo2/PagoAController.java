@@ -72,6 +72,12 @@ public class PagoAController implements Initializable {
         
     }
     
+     /**
+     * Ejecuta una tarea en un hilo separado al escribir en el TextField txtCodigo.
+     *
+     * @throws CodigoInvalidoException Si el código ingresado no es válido.
+     */
+    
     public void ejecutarTarea()throws CodigoInvalidoException{
         Thread t = new Thread(new Runnable(){
             @Override
@@ -90,11 +96,21 @@ public class PagoAController implements Initializable {
         t.start();
     }
     
+    /**
+     * Verifica si hay excepciones al ejecutar la tarea.
+     *
+     * @throws CodigoInvalidoException Si el código ingresado no es válido.
+     */
+    
     public void verificarException() throws CodigoInvalidoException{
         if(!verificarCodigo()){
             throw new CodigoInvalidoException("Codigo ingresado invalido");
         }
     }
+    
+    /**
+     * Muestra "inválido" en la interfaz gráfica en caso de excepción.
+     */
     
     public void mostrarInvalido(){
         Platform.runLater(new Runnable(){
@@ -104,6 +120,12 @@ public class PagoAController implements Initializable {
             }
         });
     }
+    
+    /**
+     * Verifica si el código ingresado en el TextField coincide con alguna promoción y destino válido.
+     *
+     * @return true si el código es válido, false si no lo es.
+     */
     
     public boolean verificarCodigo(){
         ArrayList<Promocion> promos = Promocion.leerPromociones();
@@ -116,6 +138,11 @@ public class PagoAController implements Initializable {
         }
         return false;
     }
+    
+    /**
+     * Configura un evento para el RadioButton rbEfectivo cuando se selecciona.
+     * Desactiva la selección del RadioButton rbCredito cuando rbEfectivo se selecciona.
+     */
     
     public void verificarRadioEfectivo(){
         rbEfectivo.setOnAction(new EventHandler<ActionEvent>(){
