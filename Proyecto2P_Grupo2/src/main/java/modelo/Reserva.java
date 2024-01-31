@@ -281,5 +281,10 @@ public class Reserva implements Serializable, Pagable{
         }
         return reservas;
     }
+    
+    @Override
+    public String toString(){
+        return codigo+" - "+cliente.getNombre()+" "+cliente.getApellido();
+    }
 }
 
