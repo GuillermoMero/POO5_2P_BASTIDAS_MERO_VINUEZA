@@ -140,6 +140,11 @@ public class Reserva implements Serializable, Pagable{
         this.codigo = codigo;
     }
     
+    /**
+     * Escribe la reserva en el archivo "reservas.txt".
+     * @param reserva Reserva a ser escrita.
+     */
+    
     public static void escribirReservas(Reserva reserva) {
         try (FileWriter fw = new FileWriter(Main.pathFiles+"reservas.txt", true);
              BufferedWriter bw = new BufferedWriter(fw)) {
@@ -155,6 +160,12 @@ public class Reserva implements Serializable, Pagable{
         }
     }
     
+    /**
+     * Construye una línea de reserva para ser escrita en el archivo.
+     * @param reserva Reserva a ser convertida a una cadena.
+     * @return Cadena representando la reserva.
+     */
+    
     private static String construirLineaReserva(Reserva reserva) {
         return reserva.getCodigo() + "," +
            reserva.getCliente().getCedula() + "," +
@@ -169,6 +180,11 @@ public class Reserva implements Serializable, Pagable{
            reserva.getTarifaRegreso().getTipo();
     }
     
+    /**
+     * Obtiene el descuento aplicado a una reserva.
+     * @param tarifas Lista de tarifas asociadas al proceso.
+     * @return Descuento aplicado.
+     */
     
     private double obtenerDescuento(List<Tarifa> tarifas) {
         double descuento = 0.0;
@@ -181,7 +197,10 @@ public class Reserva implements Serializable, Pagable{
         return descuento * (tarifaIda.getPorcentaje() + tarifaRegreso.getPorcentaje());
     }
      
-     
+    /**
+     * Genera un ID de pago aleatorio.
+     * @return ID de pago generado.
+     */
     private int generarIdPago() {
         return new Random().nextInt(1000);
     }
@@ -198,11 +217,23 @@ public class Reserva implements Serializable, Pagable{
         }
     }
 
+    /**
+     * Genera una transacción asociada a la reserva y la escribe en un archivo de pagos.
+     * @param totalPagar Total a pagar.
+     * @param tipoPago Tipo de pago.
+     * @param descuento Descuento aplicado.
+     * @param totalReserva Total de la reserva.
+     */
     @Override
     public void generarTransaccion(double totalPagar, String tipoPago,int descuento, double totalReserva){
         Pago pago = new Pago(generarIdPago(), this.codigo, totalReserva, descuento, tipoPago, totalPagar);
         Pago.escribirPagos(pago);
     }
+    
+    /**
+     * Lee las reservas desde el archivo "reservas.txt".
+     * @return Lista de reservas leídas desde el archivo.
+     */
     
     public static ArrayList<Reserva> leerReservas(){
         ArrayList<Reserva> reservas = new ArrayList<>();

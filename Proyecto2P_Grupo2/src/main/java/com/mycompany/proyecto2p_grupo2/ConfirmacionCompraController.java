@@ -38,6 +38,8 @@ public class ConfirmacionCompraController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -53,18 +55,69 @@ public class ConfirmacionCompraController implements Initializable {
         mostrarTiempo();
     }
     
+    /**
+     *
+     */
     public static Cliente cliente;
+
+    /**
+     *
+     */
     public static Vuelo vueloIda;
+
+    /**
+     *
+     */
     public static Vuelo vueloRegreso;
+
+    /**
+     *
+     */
     public static LocalDate fechaIda;
+
+    /**
+     *
+     */
     public static LocalDate fechaRegreso;
+
+    /**
+     *
+     */
     public static int numPasajeros;
+
+    /**
+     *
+     */
     public static Tarifa tarifaIda;
+
+    /**
+     *
+     */
     public static Tarifa tarifaRegreso;
+
+    /**
+     *
+     */
     public static String codigoReserva;
+
+    /**
+     *
+     */
     public static double totalPagar;
+
+    /**
+     *
+     */
     public static int descuento;
+
+    /**
+     *
+     */
     public static String tipoPago;
+
+    /**
+     *
+     */
     public static double totalReserva;
     
     @FXML
@@ -79,9 +132,19 @@ public class ConfirmacionCompraController implements Initializable {
     @FXML
     private Button btnAceptar;
     
+    /**
+     * Carga el código de reserva en un Label.
+     */
+    
     public void cargarLabelReserva(){
         lblReserva.setText("Reserva: "+codigoReserva);
     }
+    
+    /**
+     * Genera un código de reserva aleatorio.
+     *
+     * @return Código de reserva generado.
+     */
     
     public String generarCodigoReserva(){
         Random rd = new Random();
@@ -92,6 +155,10 @@ public class ConfirmacionCompraController implements Initializable {
         }
         return codigo.toString();
     }
+    
+    /**
+     * Inicia un hilo para ejecutar una tarea, muestra información de tiempo y cierra la ventana actual.
+     */
     
     public void mostrarTiempo(){
         Thread t = new Thread(new Runnable(){
@@ -146,6 +213,14 @@ public class ConfirmacionCompraController implements Initializable {
         });
     }
     
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Aceptar".
+     * Crea una nueva reserva, la guarda en un archivo y realiza una transacción de pago si es necesario.
+     * Cierra la ventana actual.
+     *
+     * @param event Evento de acción generado por el clic en el botón "Aceptar".
+     */
+    
     @FXML
     void aceptar(ActionEvent e){
         String fechaI = obtenerFormatoFecha(fechaIda);
@@ -161,6 +236,13 @@ public class ConfirmacionCompraController implements Initializable {
         Stage s = (Stage)btnAceptar.getScene().getWindow();
         s.close();
     }
+    
+    /**
+     * Convierte una fecha en formato LocalDate a una cadena en formato "dd/MM/yyyy".
+     *
+     * @param fecha Fecha en formato LocalDate.
+     * @return Fecha formateada como una cadena.
+     */
     
     public String obtenerFormatoFecha(LocalDate fecha){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

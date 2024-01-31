@@ -35,12 +35,26 @@ public class CancelarProcesoController implements Initializable {
     @FXML
     private Button btnNo;
     
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Sí".
+     * Cierra la ventana actual y la ventana del proceso de pago.
+     *
+     * @param event Evento de acción generado por el clic en el botón "Sí".
+     */
+    
     @FXML
     void si(ActionEvent e){
         Stage s = (Stage) btnSi.getScene().getWindow();
         s.close();
         stageProcesoPago.close();
     }
+    
+    /**
+     * Maneja el evento cuando se hace clic en el botón "No".
+     * Cierra la ventana actual.
+     *
+     * @param event Evento de acción generado por el clic en el botón "No".
+     */
     
     @FXML
     void no(ActionEvent e){

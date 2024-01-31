@@ -48,6 +48,8 @@ public class PagoAController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -58,15 +60,49 @@ public class PagoAController implements Initializable {
         verificarRadioCredito();
     }  
     
+    /**
+     *
+     */
     public static Destino destino;
     
+    /**
+     *
+     */
     public static double totalPrecio;
+
+    /**
+     *
+     */
     public Label lblNumero; 
+
+    /**
+     *
+     */
     public Label lblFecha;
+
+    /**
+     *
+     */
     public Label lblCVV;
+
+    /**
+     *
+     */
     public TextField txtNumTC;
+
+    /**
+     *
+     */
     public DatePicker dpExpiracion;
+
+    /**
+     *
+     */
     public PasswordField pwCVV;
+
+    /**
+     *
+     */
     public GridPane gpCredito;
     
     @FXML
@@ -102,6 +138,9 @@ public class PagoAController implements Initializable {
     @FXML
     private Button btnCancelar;
     
+    /**
+     *
+     */
     public void verificarTextField(){
         txtCodigo.setOnKeyTyped(new EventHandler<KeyEvent>(){
             public void handle(KeyEvent e){
@@ -323,7 +362,6 @@ public class PagoAController implements Initializable {
 
     /**
  * Método para manejar el evento de clic en el botón "Pagar" y realizar acciones dependiendo del método de pago seleccionado.
- * @param gp El GridPane que contiene el formulario de pago.
  */
     public void pagar(){
         btnPagar.setOnAction(new EventHandler<ActionEvent>(){
@@ -346,7 +384,6 @@ public class PagoAController implements Initializable {
 
     /**
  * Método para ejecutar el pago, generalmente llamado cuando se confirma la compra.
- * @param gp El GridPane que contiene el formulario de pago.
  */
     public void ejecutarPago(){
 
