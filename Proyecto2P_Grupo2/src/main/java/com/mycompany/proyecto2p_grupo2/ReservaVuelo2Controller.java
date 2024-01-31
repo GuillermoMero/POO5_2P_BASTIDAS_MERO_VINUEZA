@@ -332,6 +332,7 @@ public class ReservaVuelo2Controller implements Initializable {
         v.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent m){
+                ConfirmacionCompraController.tarifaIda = t;
                 DetallesVueloIdaController.tarifa = t;
                 ReservaVuelo5Controller.vueloIda.setPrecio(valor);
                 Stage s = (Stage) v.getScene().getWindow();

@@ -212,6 +212,7 @@ public class ReservaVuelo3Controller implements Initializable {
         bp.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent m){
+                ConfirmacionCompraController.vueloRegreso = v;
                 ReservaVuelo5Controller.vueloRegreso = v;
                 ReservaVuelo4Controller.precioVuelo = v.getPrecio();
                 DetallesVueloRegresoController.vuelo = v;

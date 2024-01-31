@@ -4,6 +4,10 @@
  */
 package modelo;
 
+import com.mycompany.proyecto2p_grupo2.Main;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 
 /**
@@ -16,11 +20,11 @@ public class Pago implements Serializable {
     private int id;
     private String codigoReserva;
     private double totalReserva;
-    private double descuento;
+    private int descuento;
     private String formaPago;
     private double totalPagar;
 
-    public Pago(int id, String codigoReserva, double totalReserva, double descuento, String formaPago, double totalPagar) {
+    public Pago(int id, String codigoReserva, double totalReserva, int descuento, String formaPago, double totalPagar) {
         this.id = id;
         this.codigoReserva = codigoReserva;
         this.totalReserva = totalReserva;
@@ -55,11 +59,11 @@ public class Pago implements Serializable {
         this.totalReserva = totalReserva;
     }
 
-    public double getDescuento() {
+    public int getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(double descuento) {
+    public void setDescuento(int descuento) {
         this.descuento = descuento;
     }
 
@@ -79,5 +83,17 @@ public class Pago implements Serializable {
         this.totalPagar = totalPagar;
     }
     
-    
+    public static void escribirPagos(Pago p) {
+        try (FileWriter fw = new FileWriter(Main.pathFiles+"pagos.txt", true);
+             BufferedWriter bw = new BufferedWriter(fw)) {
+            String linea = p.getId()+","+p.getCodigoReserva()+","+p.getTotalReserva()+","+p.getDescuento()+","+p.getFormaPago()+","+p.getTotalPagar();
+            bw.write(linea);
+            bw.newLine();
+
+            System.out.println("Reserva guardada en el archivo.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

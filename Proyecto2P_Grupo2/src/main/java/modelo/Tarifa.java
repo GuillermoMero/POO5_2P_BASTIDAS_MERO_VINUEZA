@@ -8,6 +8,7 @@ import com.mycompany.proyecto2p_grupo2.Main;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  *
  * @author LENOVO
  */
-public class Tarifa {
+public class Tarifa implements Serializable{
     private String nombre;
     private String tipo;
     private ArrayList<String> caracteristicas;

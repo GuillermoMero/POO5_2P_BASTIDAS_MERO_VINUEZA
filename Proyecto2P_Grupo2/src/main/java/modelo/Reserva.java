@@ -4,12 +4,18 @@
  */
 package modelo;
 
+import com.mycompany.proyecto2p_grupo2.Main;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -17,7 +23,7 @@ import java.util.Random;
  *
  * @author LENOVO
  */
-public class Reserva  implements Serializable, Pagable{
+public class Reserva implements Serializable, Pagable{
     private static final long serialVersionUID = 1L;
     
     private Cliente cliente;
@@ -26,20 +32,20 @@ public class Reserva  implements Serializable, Pagable{
     private String fechaSalida;
     private String fechaRegreso;
     private int numeroPasajeros;
-    private int numida;
-    private int numRegreso;
+    private String numIda;
+    private String numRegreso;
     private Tarifa tarifaIda;
     private Tarifa tarifaRegreso;
     private String codigo;
 
-    public Reserva(Cliente cliente, String ciudadOrigen, String ciudadDestino, String fechaSalida, String fechaRegreso, int numeroPasajeros, int numida, int numRegreso, Tarifa tarifaIda, Tarifa tarifaRegreso, String codigo) {
+    public Reserva(Cliente cliente, String ciudadOrigen, String ciudadDestino, String fechaSalida, String fechaRegreso, int numeroPasajeros, String numIda, String numRegreso, Tarifa tarifaIda, Tarifa tarifaRegreso, String codigo) {
         this.cliente = cliente;
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
         this.fechaSalida = fechaSalida;
         this.fechaRegreso = fechaRegreso;
         this.numeroPasajeros = numeroPasajeros;
-        this.numida = numida;
+        this.numIda = numIda;
         this.numRegreso = numRegreso;
         this.tarifaIda = tarifaIda;
         this.tarifaRegreso = tarifaRegreso;
@@ -94,19 +100,19 @@ public class Reserva  implements Serializable, Pagable{
         this.numeroPasajeros = numeroPasajeros;
     }
 
-    public int getNumida() {
-        return numida;
+    public String getNumIda() {
+        return numIda;
     }
 
-    public void setNumida(int numida) {
-        this.numida = numida;
+    public void setNumIda(String numida) {
+        this.numIda = numida;
     }
 
-    public int getNumRegreso() {
+    public String getNumRegreso() {
         return numRegreso;
     }
 
-    public void setNumRegreso(int numRegreso) {
+    public void setNumRegreso(String numRegreso) {
         this.numRegreso = numRegreso;
     }
 
@@ -134,8 +140,8 @@ public class Reserva  implements Serializable, Pagable{
         this.codigo = codigo;
     }
     
-    private void escribirReserva(String nombreArchivo, Reserva reserva) {
-        try (FileWriter fw = new FileWriter(nombreArchivo, true);
+    public static void escribirReservas(Reserva reserva) {
+        try (FileWriter fw = new FileWriter(Main.pathFiles+"reservas.txt", true);
              BufferedWriter bw = new BufferedWriter(fw)) {
 
             String linea = construirLineaReserva(reserva);
@@ -150,42 +156,39 @@ public class Reserva  implements Serializable, Pagable{
     }
     
     private static String construirLineaReserva(Reserva reserva) {
-        return reserva.getCodigo() + ";" +
-           reserva.getCliente() + ";" +
-           reserva.getCiudadOrigen() + ";" +
-           reserva.getCiudadDestino() + ";" +
-           reserva.getFechaSalida() + ";" +
-           reserva.getFechaRegreso() + ";" +
-           reserva.getNumeroPasajeros() + ";" +
-           reserva.getNumida() + ";" +
-           reserva.getNumRegreso() + ";" +
-           reserva.getTarifaIda() + ";" +
-           reserva.getTarifaRegreso();
+        return reserva.getCodigo() + "," +
+           reserva.getCliente().getCedula() + "," +
+           reserva.getCiudadOrigen() + "," +
+           reserva.getCiudadDestino() + "," +
+           reserva.getFechaSalida() + "," +
+           reserva.getFechaRegreso() + "," +
+           reserva.getNumeroPasajeros() + "," +
+           reserva.getNumIda() + "," +
+           reserva.getNumRegreso() + "," +
+           reserva.getTarifaIda().getTipo() + "," +
+           reserva.getTarifaRegreso().getTipo();
     }
     
     
-     private double obtenerDescuento(List<Tarifa> tarifas) {
+    private double obtenerDescuento(List<Tarifa> tarifas) {
         double descuento = 0.0;
-
         for (Tarifa tarifa : tarifas) {
             if (tarifa.getTipo().equals("Descuento") && tarifa.getCaracteristicas().contains(ciudadDestino)) {
                 descuento = tarifa.getPorcentaje() / 100.0;
                 break;
             }
         }
-
         return descuento * (tarifaIda.getPorcentaje() + tarifaRegreso.getPorcentaje());
     }
      
      
-     private int generarIdPago() {
-        
+    private int generarIdPago() {
         return new Random().nextInt(1000);
     }
      
-      private void serializarReserva(Reserva reserva) {
+    public static void serializarReserva(Reserva reserva) {
         try (ObjectOutputStream oos = new ObjectOutputStream(
-                new FileOutputStream(reserva.getCodigo() + ".bin"))) {
+                new FileOutputStream(Main.pathFiles+reserva.getCodigo() + ".bin"))) {
 
             oos.writeObject(reserva);
             System.out.println("Reserva serializada correctamente.");
@@ -196,34 +199,56 @@ public class Reserva  implements Serializable, Pagable{
     }
 
     @Override
-    public Pago generarTransaccion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void generarTransaccion(double totalPagar, String tipoPago,int descuento, double totalReserva){
+        Pago pago = new Pago(generarIdPago(), this.codigo, totalReserva, descuento, tipoPago, totalPagar);
+        Pago.escribirPagos(pago);
     }
-
-    /**@Override
-    public Pago generarTransaccion() {
-        double totalReserva = tarifaIda.getPorcentaje()+ tarifaRegreso.getPorcentaje();
-        double descuento = obtenerDescuento(tarifas);
-=======
-        /***double totalReserva = tarifaIda.getPorcentaje()+ tarifaRegreso.getPorcentaje();
-        //double descuento = obtenerDescuento(tarifas);
->>>>>>> 76cd4358293789b8caa8c362f9125f1c22ec9c12
-        String formaPago = "Tarjeta de crédito"; 
-        //double totalPagar = totalReserva - descuento;
-
-        Pago pago = new Pago(generarIdPago(), codigo, totalReserva, descuento, formaPago, totalPagar);
-
-        escribirReserva("Reservas.txt", this);
-
-        serializarReserva(this);
-        return pago;
-<<<<<<< HEAD
-    }*/
-=======
-        return null;
-    }***/
->>>>>>> 733648a607662557f40bf00fec5a6e0b8f0daa33
-
-
+    
+    public static ArrayList<Reserva> leerReservas(){
+        ArrayList<Reserva> reservas = new ArrayList<>();
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        try{
+            archivo = new File(Main.pathFiles+"reservas.txt");
+            fr = new FileReader(archivo,StandardCharsets.UTF_8);
+            br = new BufferedReader(fr);
+            String linea;
+            while((linea=br.readLine())!=null){
+                ArrayList<Cliente> clientes = Cliente.leerClientes();
+                ArrayList<Tarifa> tarifas = Tarifa.leerTarifas();
+                String partes [] = linea.split(",");
+                Cliente cliente = null;
+                Tarifa tIda = null;
+                Tarifa tRegreso = null;
+                for(Cliente c: clientes){
+                    if(c.getCedula().equals(partes[1])){
+                        cliente = c;
+                    }
+                }
+                for(Tarifa t: tarifas){
+                    if(t.getTipo().equals(partes[9])){
+                        tIda = t;
+                    }
+                    if(t.getTipo().equals(partes[10])){
+                        tRegreso = t;
+                    }
+                }
+                Reserva r = new Reserva(cliente,partes[2],partes[3],partes[4],partes[5],Integer.parseInt(partes[6]),partes[7],partes[8],tIda,tRegreso,partes[0]);
+                reservas.add(r);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(fr!=null){
+                    fr.close();
+                }
+            }catch(Exception e2){
+                e2.printStackTrace();
+            }
+        }
+        return reservas;
     }
+}
 

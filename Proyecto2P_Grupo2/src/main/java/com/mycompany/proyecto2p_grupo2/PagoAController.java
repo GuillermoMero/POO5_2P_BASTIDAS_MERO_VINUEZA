@@ -305,6 +305,8 @@ public class PagoAController implements Initializable {
             public void run(){
                 double total = totalPrecio - (totalPrecio*(p.getDescuento()*0.01));
                 lblTotal.setText("Total a pagar: "+String.format("%.2f", total));
+                ConfirmacionCompraController.totalPagar = total;
+                ConfirmacionCompraController.descuento = p.getDescuento();
             }
         });
     }
@@ -323,11 +325,7 @@ public class PagoAController implements Initializable {
  * Método para manejar el evento de clic en el botón "Pagar" y realizar acciones dependiendo del método de pago seleccionado.
  * @param gp El GridPane que contiene el formulario de pago.
  */
-    
-    
-
     public void pagar(){
-
         btnPagar.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e){
@@ -335,6 +333,11 @@ public class PagoAController implements Initializable {
                     ejecutarPago();
                 }else if(verificarCodigo()|| txtCodigo.getText().isEmpty()){
                     mostrarConfirmacionCompra();
+                }
+                if(rbCredito.isSelected()){
+                    ConfirmacionCompraController.tipoPago = "TC";
+                }else if(rbEfectivo.isSelected()){
+                    ConfirmacionCompraController.tipoPago = "E";
                 }
             }
         });
@@ -403,6 +406,7 @@ public class PagoAController implements Initializable {
     
     @FXML
     void cancelar(ActionEvent e){
+        CancelarProcesoController.stageProcesoPago = (Stage)btnCancelar.getScene().getWindow();
         Stage s = new Stage();
         FXMLLoader fl = new FXMLLoader(Main.class.getResource("CancelarProceso.fxml"));
         Parent rootCancelar = null;

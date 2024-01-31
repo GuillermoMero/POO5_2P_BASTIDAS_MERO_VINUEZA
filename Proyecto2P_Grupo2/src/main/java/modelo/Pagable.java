@@ -9,5 +9,5 @@ package modelo;
  * @author Paula
  */
 interface Pagable {
-    Pago generarTransaccion();
+    void generarTransaccion(double totalPagar, String tipoPago,int descuento, double totalReserva);
 }

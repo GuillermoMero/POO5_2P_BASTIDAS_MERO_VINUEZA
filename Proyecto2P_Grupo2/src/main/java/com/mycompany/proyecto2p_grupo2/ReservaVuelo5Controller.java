@@ -342,6 +342,7 @@ public class ReservaVuelo5Controller implements Initializable {
                 }catch (IOException i){
                     
                 }
+                ConfirmacionCompraController.totalReserva = vueloIda.getPrecio()+vueloRegreso.getPrecio();
                 PagoAController.totalPrecio = vueloIda.getPrecio()+vueloRegreso.getPrecio();
                 Scene vetanaRservaDP = new Scene(rootReservaDP);
                 s.setTitle("Reserva Datos Personales");

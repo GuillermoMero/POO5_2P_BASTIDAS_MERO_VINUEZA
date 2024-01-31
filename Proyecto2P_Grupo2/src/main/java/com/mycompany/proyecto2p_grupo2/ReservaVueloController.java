@@ -159,6 +159,9 @@ public class ReservaVueloController implements Initializable {
             ReservaDatosPersonalesController.numPasajeros = spCantidades.getValue();
             ReservaVuelo1Controller rc1 = fl.getController();
             rc1.cargarTitulo();
+            ConfirmacionCompraController.fechaIda = dpSalida.getValue();
+            ConfirmacionCompraController.numPasajeros = spCantidades.getValue();
+            ConfirmacionCompraController.fechaRegreso = dpRegreso.getValue();
             PagoAController.destino = cbDestinos.getValue();
             ReservaVuelo1Controller.origenSeleccionado = cbOrigenes.getValue();
             ReservaVuelo1Controller.destinoSeleccionado = String.valueOf(cbDestinos.getValue());

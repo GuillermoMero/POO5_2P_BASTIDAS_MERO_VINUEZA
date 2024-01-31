@@ -89,6 +89,7 @@ public class InicioController implements Initializable {
             Cliente c = clientes.get(i);
              if(userIngresado.equals(c.getUsuario()) && contraIngresada.equals(c.getContrasenia())){
                 Stage s = (Stage)btnInicio.getScene().getWindow();
+                ConfirmacionCompraController.cliente = c;
                 cargarBienvenidos(c,s); 
                 cargarReservasCreadas(c);
             }else{

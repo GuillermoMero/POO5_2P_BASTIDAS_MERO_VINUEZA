@@ -6,7 +6,11 @@ package com.mycompany.proyecto2p_grupo2;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -23,4 +27,24 @@ public class CancelarProcesoController implements Initializable {
         // TODO
     }    
     
+    public static Stage stageProcesoPago;
+    
+    @FXML
+    private Button btnSi;
+    
+    @FXML
+    private Button btnNo;
+    
+    @FXML
+    void si(ActionEvent e){
+        Stage s = (Stage) btnSi.getScene().getWindow();
+        s.close();
+        stageProcesoPago.close();
+    }
+    
+    @FXML
+    void no(ActionEvent e){
+        Stage s = (Stage) btnNo.getScene().getWindow();
+        s.close();
+    }
 }

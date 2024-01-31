@@ -8,6 +8,7 @@ import com.mycompany.proyecto2p_grupo2.Main;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -15,13 +16,14 @@ import java.util.ArrayList;
  *
  * @author LENOVO
  */
-public class Cliente {
+public class Cliente implements Serializable{
     private String cedula;
     private String nombre;
     private String apellido;
     private String usuario;
     private String contrasenia;
     private String genero;
+    
     public Cliente(String id, String n, String a, String u, String c, String g){
         this.cedula = id;
         this.nombre = n;

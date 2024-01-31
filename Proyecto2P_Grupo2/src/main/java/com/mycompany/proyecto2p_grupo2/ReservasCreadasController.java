@@ -46,23 +46,25 @@ public class ReservasCreadasController implements Initializable {
     @FXML
     private ListView<String> listReservas;
     
-    private ArrayList<String> a = new ArrayList<>();
-    
     /**
      * Carga la lista de reservas con datos iniciales y programa una actualización periódica.
      */
     
     public void cargarListaReservas(){
-       
-        a.add("Vacio");
-        a.add("Vacio 2");
-        listReservas.getItems().setAll(a);
-        Timeline timeline;
-        timeline = new Timeline(new KeyFrame(
-                Duration.seconds(5),
-                event -> actualizarLista()));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
+        Thread t = new Thread(new Runnable(){
+            @Override
+            public void run(){
+                for(int i=0; i<50; i++){
+                    try{
+                        Thread.sleep(5000);
+                    }catch(InterruptedException e){
+                        
+                    }
+                    
+                }
+            }
+        });
+        t.start();
     }
     
     /**
@@ -70,10 +72,8 @@ public class ReservasCreadasController implements Initializable {
      */
     
     public void actualizarLista(){
-        ArrayList<String> b = new ArrayList<>();
-        b.add("Cambio");
-        b.add("cambio 2");
+        ArrayList<Reserva> reservas = Reserva.leerReservas();
         listReservas.getItems().clear();
-        listReservas.getItems().addAll(b);
+        listReservas.getItems().addAll();
     }
 }

@@ -35,6 +35,7 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller.class
 com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController$2.class
 modelo\Pago.class
+com\mycompany\proyecto2p_grupo2\ConfirmacionCompraController$1.class
 modelo\Pagable.class
 com\mycompany\proyecto2p_grupo2\PagoAController.class
 com\mycompany\proyecto2p_grupo2\InicioController.class
@@ -57,6 +58,7 @@ com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$1.class
 com\mycompany\proyecto2p_grupo2\ReservaDatosPersonalesController.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo4Controller$5.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo2Controller$4.class
+com\mycompany\proyecto2p_grupo2\ConfirmacionCompraController$3.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo5Controller$2.class
 com\mycompany\proyecto2p_grupo2\ReservaVuelo3Controller$1.class
 com\mycompany\proyecto2p_grupo2\PagoAController$1.class
@@ -64,6 +66,7 @@ modelo\Vuelo.class
 com\mycompany\proyecto2p_grupo2\DetallesVueloIdaController.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$2.class
 com\mycompany\proyecto2p_grupo2\SpanishDateConverter.class
+com\mycompany\proyecto2p_grupo2\ConfirmacionCompraController$2.class
 com\mycompany\proyecto2p_grupo2\Main.class
 com\mycompany\proyecto2p_grupo2\MapaPromocionesController$3.class
 modelo\Tarifa.class
